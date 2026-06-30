@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="es" style="--stage-scale: 0.6043;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>index · Edificios en Pozo TV</title>
+<style>
+:root{
+  --bg:#061426;--panel:#071d36;--panel2:#092947;--border:#355575;--text:#f2f7ff;--muted:#c8d6e8;
+  --blue:#149ff2;--green:#79cf3a;--orange:#ff9800;--orange2:#ff5b21;--red:#ff3535;--purple:#9d55d5;--cyan:#19c7c0;--yellow:#ffc400;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;background:#04101f;font-family:Arial,Helvetica,sans-serif;color:var(--text);overflow:hidden;position:relative}
+body{display:flex;align-items:center;justify-content:center}
+.stage{
+  width:1650px;height:930px;position:absolute;left:50%;top:50%;margin:0;
+  padding:16px 22px 16px;
+  background:radial-gradient(circle at 20% 5%,rgba(25,104,173,.35),transparent 30%),
+             radial-gradient(circle at 80% 18%,rgba(16,75,129,.28),transparent 30%),
+             linear-gradient(135deg,#071326,#06172b 45%,#04101f);
+  transform-origin:center center;
+  transform:translate(-50%,-50%) scale(var(--stage-scale,1));
+}
+
+.top{display:grid;grid-template-columns:560px 1fr 230px;gap:16px;align-items:center;margin-bottom:8px}
+.title h1{font-size:26px;margin:0;font-weight:900;letter-spacing:1px;line-height:.94}
+.title h1 span{display:block;font-size:46px;color:var(--blue);letter-spacing:2px}
+.subtitle{font-size:15px;font-weight:700;margin-top:8px;color:#fff}
+.kpiStrip{height:92px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(180deg,rgba(11,40,72,.95),rgba(4,18,36,.95));display:grid;grid-template-columns:repeat(4,1fr);align-items:center;padding:10px 15px;box-shadow:inset 0 0 20px rgba(255,255,255,.03)}
+.kpiTop{display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:center;border-right:1px solid var(--border);height:60px;padding:0 8px}
+.kpiTop:last-child{border-right:0}
+.icon{width:50px;height:50px;border-radius:11px;display:grid;place-items:center;font-size:18px;font-weight:900;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.iBlue{background:linear-gradient(135deg,#1177e6,#42b7ff)}.iGreen{background:linear-gradient(135deg,#10a527,#52df4c)}
+.iPurple{background:linear-gradient(135deg,#7d35c0,#c17cff)}.iOrange{background:linear-gradient(135deg,#ff8d00,#ffc149)}
+.kpiTop .lab{font-size:11px;font-weight:800;text-transform:uppercase;color:#fff}.kpiTop .val{font-size:24px;font-weight:900;margin-top:3px}.kpiTop .sub{font-size:12px;color:#fff}
+.logo{display:flex;align-items:center;gap:13px;justify-content:flex-end;font-size:18px;font-weight:900;line-height:.95}
+.barsLogo{display:flex;align-items:end;gap:6px}.barsLogo div{width:15px;background:#fff}.barsLogo div:nth-child(1){height:36px}.barsLogo div:nth-child(2){height:56px}.barsLogo div:nth-child(3){height:72px}.logo small{font-size:16px;font-weight:500}
+.dashboard{display:grid;grid-template-columns:620px 540px 1fr;grid-template-rows:300px 295px 300px;gap:12px}
+.card{background:linear-gradient(180deg,rgba(9,36,66,.96),rgba(5,22,43,.98));border:1px solid var(--border);border-radius:10px;padding:10px 14px;position:relative;overflow:hidden;min-width:0}
+.cardTitle{display:flex;align-items:flex-start;gap:10px;margin-bottom:6px}
+.numBox{background:linear-gradient(135deg,#006bd7,#1da9ff);border-radius:5px;width:40px;height:36px;display:grid;place-items:center;font-size:18px;font-weight:900}
+.card h2{margin:0;font-size:18px;text-transform:uppercase;letter-spacing:.5px}.card .desc{font-size:12px;color:#fff;margin-top:3px}
+.chartArea{position:absolute;left:50px;right:160px;bottom:24px;top:82px;border-bottom:1px solid #6b7284}
+.gridlines{position:absolute;inset:0;background:repeating-linear-gradient(to top, transparent 0, transparent 34px, rgba(255,255,255,.16) 35px, transparent 36px)}
+.cols{position:absolute;inset:0;display:flex;align-items:end;justify-content:space-around;padding:0 18px}
+.colWrap{text-align:center;width:82px;position:relative}.col{width:48px;margin:0 auto;border-radius:2px 2px 0 0;box-shadow:inset 0 14px 20px rgba(255,255,255,.25),0 6px 15px rgba(0,0,0,.4)}.valueTop{font-size:19px;font-weight:900;margin-bottom:10px;text-shadow:0 2px 4px #000;position:relative;top:8px}.xlab{font-size:12px;font-weight:800;margin-top:6px;line-height:1.15}
+.sideBox{position:absolute;right:12px;top:68px;width:126px;bottom:24px;border:1px solid var(--border);border-radius:12px;background:rgba(3,15,30,.6);padding:10px;text-align:center}
+.sideBox .mini{font-size:10px;text-transform:uppercase;font-weight:800;line-height:1.3}.sideBox .bigBlue{font-size:22px;color:var(--blue);font-weight:900}.sideBox .bigGreen{font-size:22px;color:var(--green);font-weight:900}.sep{height:1px;background:repeating-linear-gradient(to right,#fff 0,#fff 4px,transparent 4px,transparent 7px);opacity:.8;margin:7px 0}
+.donutBox{display:grid;grid-template-columns:170px 1fr;align-items:center;height:200px;margin-top:5px}
+.donut{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;position:relative;margin:auto;box-shadow:0 10px 25px #0008}
+.donut:before{content:"";position:absolute;width:86px;height:86px;border-radius:50%;background:#071d36}.donut span{position:relative;font-size:18px;font-weight:900}
+.legend{display:grid;gap:12px;font-size:15px;font-weight:800}.leg{display:grid;grid-template-columns:22px 1fr auto;gap:10px;align-items:center}.sq{width:18px;height:18px;border-radius:4px}.leg small{display:block;font-size:11px;color:#c8d6e8;font-weight:600}
+.convArea{position:absolute;left:48px;right:48px;bottom:48px;top:70px;border-bottom:1px solid #6b7284}
+.convBars{display:flex;align-items:end;justify-content:space-between;height:100%}.convItem{text-align:center;width:52px}.convBar{width:28px;margin:auto;background:linear-gradient(180deg,#b36be1,#7a42b6);box-shadow:inset 0 12px 18px rgba(255,255,255,.25)}.convVal{font-size:14px;font-weight:900;margin-bottom:4px}.convName{font-size:11px;line-height:1.15;margin-top:5px}
+.avgLine{position:absolute;left:0;right:0;bottom:50%;border-top:2px dotted #ffc400}.avgLabel{position:absolute;right:14px;top:50px;color:#ffc400;font-size:12px;font-weight:900;text-align:center}
+.hbarArea{position:absolute;left:135px;right:98px;top:62px;bottom:32px}.hrow{display:grid;grid-template-columns:1fr 38px;align-items:center;gap:8px;margin:7px 0}.hfill{height:16px;background:linear-gradient(90deg,#006bd7,#25a7ff);box-shadow:inset 0 8px 12px rgba(255,255,255,.18)}.hfill.teal{background:linear-gradient(90deg,#16b8a2,#30ded0)}.hnum{font-size:14px;font-weight:900}.hnames{position:absolute;left:22px;top:64px;width:102px;font-size:11px;line-height:24px;text-align:right}
+.totalSide{position:absolute;right:10px;top:66px;bottom:24px;width:82px;border:1px solid var(--border);border-radius:10px;background:rgba(3,15,30,.55);display:grid;grid-template-rows:1fr 1fr;text-align:center;overflow:hidden}.totalSide>div{display:flex;flex-direction:column;justify-content:center;padding:8px;border-bottom:1px solid var(--border)}.totalSide>div:last-child{border-bottom:0}.totalSide .ttl{font-size:10px;text-transform:uppercase;font-weight:800;line-height:1.25}.totalSide .n{font-size:27px;font-weight:900}.totalSide .s{font-size:16px;font-weight:900}
+.proj{grid-column:1 / span 2;grid-row:3}.projLayout{display:grid;grid-template-columns:135px 1fr 165px;gap:18px;align-items:center;height:198px}.stack{display:grid;gap:12px}.smallK{border:1px solid var(--border);border-radius:9px;background:rgba(3,15,30,.55);height:72px;display:flex;flex-direction:column;justify-content:center;text-align:center}.smallK .lab{font-size:13px;text-transform:uppercase;font-weight:800}.smallK .val{font-size:26px;color:var(--blue);font-weight:900}
+.gaugeWrap{display:grid;grid-template-columns:165px 1fr;align-items:center}.projNum{text-align:center;border-left:1px solid var(--border);padding-left:18px}.projNum .lab{font-size:15px;text-transform:uppercase;font-weight:800}.projNum .n{font-size:46px;color:#ffc400;font-weight:900}
+.gauge{width:220px;height:110px;border-radius:260px 260px 0 0;position:relative;margin:-10px auto 0}.gauge:before{content:"";position:absolute;left:61px;top:61px;width:98px;height:98px;border-radius:50%;background:#071d36}.gaugePct{position:absolute;left:0;right:0;top:25px;text-align:center;font-size:42px;font-weight:900;text-shadow:0 3px 6px #000}.gaugeLabels{text-align:center;font-size:13px;font-weight:900;margin-top:52px;line-height:1.5;text-shadow:0 2px 5px #000}
+.conclusion{grid-column:3;grid-row:3}.conItems{display:grid;gap:8px;margin-top:4px}.conItem{display:grid;grid-template-columns:34px 1fr;gap:9px;align-items:start;min-width:0}.round{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:16px;font-weight:900;flex:0 0 auto}.conText{font-size:13px;line-height:1.13;word-break:normal;overflow-wrap:break-word;max-height:48px;overflow:hidden}.conText b{color:#ffc400}
+.admin:before{content:"ADMIN V5.6";color:#ffc400;font-weight:900;margin-right:4px}.admin{position:absolute;left:50%;right:auto;bottom:10px;transform:translateX(-50%);display:flex;gap:8px;align-items:center;background:rgba(0,0,0,.45);border:1px solid #ffffff33;border-radius:10px;padding:6px 8px;font-size:11px;z-index:4}.admin input[type=file]{width:190px;color:#fff}.admin input[type=number]{width:64px;background:#061426;color:#fff;border:1px solid #446282;border-radius:6px;padding:4px}.admin button{background:#149ff2;border:0;color:#fff;font-weight:800;border-radius:7px;padding:7px 10px;cursor:pointer}.admin label{display:flex;gap:4px;align-items:center}
+.status{color:#ffc400;font-weight:800;min-width:140px}
+.footer{position:absolute;left:60px;right:420px;bottom:17px;font-size:18px;font-weight:900;letter-spacing:.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.footer span{color:var(--blue);margin-left:25px}
+body.presentation .admin{display:none}
+body.presentation .footer{right:60px}
+
+.growthRows{display:grid;gap:4px;margin-top:6px;font-size:10px;font-weight:900;text-align:left}
+.growthRows .gr{display:grid;grid-template-columns:1fr auto;gap:4px;align-items:center;border-top:1px solid rgba(255,255,255,.16);padding-top:4px}
+.growthRows .pos{color:#79cf3a}.growthRows .warn{color:#ffc400}.growthRows .neg{color:#ff3535}
+.ppdCard .cardTitle{margin-bottom:2px}.ppdArea{position:absolute;left:48px;right:48px;bottom:52px;top:72px;border-bottom:1px solid #6b7284}
+.ppdBars{display:flex;align-items:end;justify-content:space-between;height:100%}.ppdItem{text-align:center;width:58px}.ppdBar{width:30px;margin:auto;border-radius:3px 3px 0 0;box-shadow:inset 0 12px 18px rgba(255,255,255,.25),0 6px 15px rgba(0,0,0,.35)}
+.ppdVal{font-size:14px;font-weight:900;margin-bottom:4px}.ppdName{font-size:11px;line-height:1.15;margin-top:5px}.ppdState{font-size:13px;margin-top:2px}
+.objLine{position:absolute;left:0;right:0;top:-18px;border-top:3px solid #ff3535;box-shadow:0 0 9px rgba(255,53,53,.65)}
+.objLabel{position:absolute;right:10px;top:-20px;transform:translateY(-100%);color:#ff3535;font-size:12px;font-weight:900;text-align:right;text-shadow:0 2px 4px #000}
+.ppdSummary{position:absolute;left:48px;right:48px;bottom:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center;font-weight:900;font-size:12px}.ppdSummary b{display:block;color:#ffc400;font-size:15px}
+.semaforoItems{display:grid;grid-template-columns:1fr;gap:14px;margin-top:12px}.semaforoBlock{border:1px solid var(--border);border-radius:12px;background:rgba(3,15,30,.55);padding:14px 16px;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center}.semaforoBlock .dot{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:17px}.semaforoBlock .titleS{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.4px}.semaforoBlock .namesS{font-size:18px;font-weight:900;margin-top:4px}.semaforoBlock .noteS{font-size:12px;color:#c8d6e8;margin-top:3px}
+
+
+/* V5.1 · Crecimiento Intermensual visible */
+.permitsCard .chartArea{bottom:92px;right:160px;}
+.permitsCard .sideBox{bottom:92px;}
+.growthPanel{
+  position:absolute;left:50px;right:160px;bottom:18px;height:58px;
+  border:1px solid rgba(255,255,255,.24);border-radius:12px;
+  background:linear-gradient(180deg,rgba(5,28,56,.92),rgba(3,16,32,.92));
+  display:grid;grid-template-columns:180px 1fr;align-items:center;gap:10px;
+  padding:9px 12px;box-shadow:inset 0 0 18px rgba(255,255,255,.04),0 8px 18px rgba(0,0,0,.22)
+}
+.growthPanel .growthTitle{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.4px;color:#fff;line-height:1.1}
+.growthPanel .growthTitle span{display:block;color:#ffc400;font-size:18px;margin-top:2px}
+.growthPanel .growthRows{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0;font-size:12px;font-weight:900;text-align:center}
+.growthPanel .growthRows .gr{display:block;border:1px solid rgba(255,255,255,.16);border-radius:9px;background:rgba(0,0,0,.18);padding:7px 5px}
+.growthPanel .growthRows .gr span{display:block;font-size:10px;color:#c8d6e8;text-transform:uppercase;margin-bottom:2px}
+.growthPanel .growthRows .gr b{display:block;font-size:16px}
+.growthPanel .growthRows .pos{color:#79cf3a}.growthPanel .growthRows .warn{color:#ffc400}.growthPanel .growthRows .neg{color:#ff3535}
+
+
+/* ================= TV43 MAX · pantalla grande =================
+   Versión optimizada para TV 43": más grande, menos aire y mejor lectura.
+   ============================================================ */
+.stage{
+  width:1650px !important;
+  height:930px !important;
+  padding:12px 16px 12px !important;
+}
+.top{
+  grid-template-columns:480px 1fr 190px !important;
+  gap:12px !important;
+  margin-bottom:8px !important;
+}
+.title h1{
+  font-size:28px !important;
+  line-height:.92 !important;
+}
+.title h1 span{
+  font-size:47px !important;
+  letter-spacing:1px !important;
+}
+.subtitle{
+  font-size:15px !important;
+  margin-top:7px !important;
+}
+.kpiStrip{
+  height:96px !important;
+  padding:9px 12px !important;
+  border-radius:16px !important;
+}
+.kpiTop{
+  grid-template-columns:50px 1fr !important;
+  gap:10px !important;
+  height:68px !important;
+  padding:0 7px !important;
+}
+.icon{
+  width:46px !important;
+  height:46px !important;
+  font-size:18px !important;
+}
+.kpiTop .lab{font-size:12px !important;}
+.kpiTop .val{font-size:27px !important;}
+.kpiTop .sub{font-size:12px !important;}
+.logo{
+  font-size:17px !important;
+  gap:10px !important;
+}
+.dashboard{
+  grid-template-columns:535px 465px 1fr !important;
+  grid-template-rows:255px 250px 255px !important;
+  gap:10px !important;
+}
+.card{
+  padding:9px 12px !important;
+  border-radius:11px !important;
+}
+.card h2{
+  font-size:18px !important;
+}
+.card .desc{
+  font-size:12px !important;
+}
+.numBox{
+  width:38px !important;
+  height:34px !important;
+  font-size:18px !important;
+}
+.cardTitle{
+  margin-bottom:4px !important;
+  gap:8px !important;
+}
+.chartArea{
+  left:42px !important;
+  right:132px !important;
+  top:72px !important;
+  bottom:22px !important;
+}
+.permitsCard .chartArea{
+  bottom:74px !important;
+  right:132px !important;
+}
+.permitsCard .sideBox{
+  bottom:74px !important;
+}
+.colWrap{
+  width:70px !important;
+}
+.col{
+  width:42px !important;
+}
+.valueTop{
+  font-size:20px !important;
+  margin-bottom:6px !important;
+}
+.xlab{
+  font-size:12px !important;
+}
+.sideBox{
+  right:9px !important;
+  top:62px !important;
+  width:112px !important;
+  bottom:22px !important;
+  padding:8px !important;
+}
+.sideBox .mini{
+  font-size:10px !important;
+}
+.sideBox .bigBlue,
+.sideBox .bigGreen{
+  font-size:24px !important;
+}
+.growthPanel{
+  left:42px !important;
+  right:132px !important;
+  bottom:12px !important;
+  height:54px !important;
+  grid-template-columns:155px 1fr !important;
+  padding:7px 10px !important;
+}
+.growthPanel .growthTitle{
+  font-size:12px !important;
+}
+.growthPanel .growthTitle span{
+  font-size:17px !important;
+}
+.growthPanel .growthRows .gr{
+  padding:5px 4px !important;
+}
+.growthPanel .growthRows .gr b{
+  font-size:15px !important;
+}
+.donutBox{
+  grid-template-columns:150px 1fr !important;
+  height:170px !important;
+}
+.donut{
+  width:138px !important;
+  height:138px !important;
+}
+.donut:before{
+  width:76px !important;
+  height:76px !important;
+}
+.legend{
+  gap:9px !important;
+  font-size:15px !important;
+}
+.leg small{
+  font-size:10px !important;
+}
+.ppdArea{
+  left:40px !important;
+  right:38px !important;
+  top:68px !important;
+  bottom:48px !important;
+}
+.ppdItem{
+  width:52px !important;
+}
+.ppdBar{
+  width:28px !important;
+}
+.ppdVal{
+  font-size:15px !important;
+}
+.ppdName{
+  font-size:11px !important;
+}
+.ppdSummary{
+  left:38px !important;
+  right:38px !important;
+  bottom:8px !important;
+  font-size:12px !important;
+}
+.ppdSummary b{
+  font-size:15px !important;
+}
+.hnames{
+  left:16px !important;
+  top:58px !important;
+  width:92px !important;
+  font-size:12px !important;
+  line-height:23px !important;
+}
+.hbarArea{
+  left:118px !important;
+  right:85px !important;
+  top:56px !important;
+  bottom:28px !important;
+}
+.hrow{
+  margin:6px 0 !important;
+  grid-template-columns:1fr 36px !important;
+}
+.hfill{
+  height:17px !important;
+}
+.hnum{
+  font-size:15px !important;
+}
+.totalSide{
+  right:8px !important;
+  top:60px !important;
+  bottom:22px !important;
+  width:72px !important;
+}
+.totalSide .ttl{
+  font-size:9px !important;
+}
+.totalSide .n{
+  font-size:25px !important;
+}
+.totalSide .s{
+  font-size:14px !important;
+}
+.projLayout{
+  grid-template-columns:125px 1fr 150px !important;
+  gap:14px !important;
+  height:170px !important;
+}
+.smallK{
+  height:62px !important;
+}
+.smallK .lab{
+  font-size:12px !important;
+}
+.smallK .val{
+  font-size:27px !important;
+}
+.projNum .lab{
+  font-size:14px !important;
+}
+.projNum .n{
+  font-size:48px !important;
+}
+.gauge{
+  width:205px !important;
+  height:102px !important;
+}
+.gauge:before{
+  left:57px !important;
+  top:57px !important;
+  width:91px !important;
+  height:91px !important;
+}
+.gaugePct{
+  top:23px !important;
+  font-size:43px !important;
+}
+.gaugeLabels{
+  margin-top:46px !important;
+  font-size:13px !important;
+}
+.semaforoItems{
+  gap:9px !important;
+  margin-top:7px !important;
+}
+.semaforoBlock{
+  padding:10px 12px !important;
+  grid-template-columns:40px 1fr !important;
+  gap:10px !important;
+}
+.semaforoBlock .dot{
+  width:34px !important;
+  height:34px !important;
+}
+.semaforoBlock .titleS{
+  font-size:14px !important;
+}
+.semaforoBlock .namesS{
+  font-size:17px !important;
+}
+.semaforoBlock .noteS{
+  font-size:11px !important;
+}
+.footer{
+  left:40px !important;
+  right:360px !important;
+  bottom:10px !important;
+  font-size:15px !important;
+}
+.admin{
+  bottom:6px !important;
+  transform:translateX(-50%) scale(.92) !important;
+}
+body.presentation .admin{
+  display:none !important;
+}
+body.presentation .footer{
+  right:40px !important;
+}
+
+@media print{.admin{display:none} body{overflow:visible;display:block} .stage{position:relative;left:0;top:0;transform:none}}
+
+@page { size: A4 landscape; margin: 8mm; }
+
+
+/* ================= TV43 FINAL · 6 PANELES =================
+   Base respetada: títulos originales.
+   Se eliminan 07 Proyección de Cierre y 08 Semáforo Operativo.
+   05 toma los mismos colores de estado que 04.
+   ========================================================= */
+.stage{
+  width:1650px !important;
+  height:930px !important;
+  padding:12px 16px 10px !important;
+}
+.top{
+  grid-template-columns:480px 1fr 190px !important;
+  gap:12px !important;
+  margin-bottom:8px !important;
+}
+.dashboard{
+  display:grid !important;
+  grid-template-columns:1fr 1fr 1fr !important;
+  grid-template-rows:370px 370px !important;
+  gap:10px !important;
+}
+.permitsCard{grid-column:1 !important;grid-row:1 !important;}
+.visitasCard{grid-column:2 !important;grid-row:1 !important;}
+.dashboard > .card:nth-child(3){grid-column:3 !important;grid-row:1 !important;}
+.ppdCard{grid-column:2 !important;grid-row:2 !important;}
+.rankPermCard{grid-column:1 !important;grid-row:2 !important;}
+.rankVisCard{grid-column:3 !important;grid-row:2 !important;}
+.proj,
+.conclusion{
+  display:none !important;
+}
+
+/* Tarjetas 01 y 02 grandes y sin superposición */
+.permitsCard .chartArea,
+.visitasCard .chartArea{
+  left:44px !important;
+  right:126px !important;
+  top:82px !important;
+  bottom:92px !important;
+}
+.permitsCard .sideBox,
+.visitasCard .sideBox{
+  right:9px !important;
+  top:78px !important;
+  bottom:105px !important;
+  width:108px !important;
+  padding:7px !important;
+}
+.permitsCard .sideBox .mini,
+.visitasCard .sideBox .mini{
+  font-size:9px !important;
+  line-height:1.1 !important;
+}
+.permitsCard .sideBox .bigBlue,
+.permitsCard .sideBox .bigGreen,
+.visitasCard .sideBox .bigBlue,
+.visitasCard .sideBox .bigGreen{
+  font-size:22px !important;
+  line-height:1.05 !important;
+}
+.permitsCard .growthPanel,
+.visitasCard .growthPanel{
+  left:44px !important;
+  right:126px !important;
+  bottom:14px !important;
+  height:64px !important;
+  grid-template-columns:145px 1fr !important;
+  gap:7px !important;
+  padding:7px 9px !important;
+}
+.permitsCard .growthPanel .growthTitle,
+.visitasCard .growthPanel .growthTitle{
+  font-size:11px !important;
+  line-height:1.05 !important;
+}
+.permitsCard .growthPanel .growthTitle span,
+.visitasCard .growthPanel .growthTitle span{
+  font-size:16px !important;
+  line-height:1.05 !important;
+}
+.permitsCard .growthPanel .growthRows,
+.visitasCard .growthPanel .growthRows{
+  gap:5px !important;
+}
+.permitsCard .growthPanel .growthRows .gr,
+.visitasCard .growthPanel .growthRows .gr{
+  padding:5px 3px !important;
+}
+.permitsCard .growthPanel .growthRows .gr span,
+.visitasCard .growthPanel .growthRows .gr span{
+  font-size:8px !important;
+  white-space:nowrap !important;
+}
+.permitsCard .growthPanel .growthRows .gr b,
+.visitasCard .growthPanel .growthRows .gr b{
+  font-size:13px !important;
+  white-space:nowrap !important;
+}
+.permitsCard .valueTop,
+.visitasCard .valueTop{
+  font-size:21px !important;
+  top:4px !important;
+  margin-bottom:5px !important;
+}
+.permitsCard .xlab,
+.visitasCard .xlab{
+  font-size:11px !important;
+  line-height:1.05 !important;
+  margin-top:4px !important;
+}
+.permitsCard .col,
+.visitasCard .col{
+  width:44px !important;
+}
+
+/* 03 Origen de permisos más grande */
+.donutBox{
+  grid-template-columns:170px 1fr !important;
+  height:260px !important;
+}
+.donut{
+  width:155px !important;
+  height:155px !important;
+}
+.donut:before{
+  width:86px !important;
+  height:86px !important;
+}
+.legend{
+  gap:17px !important;
+  font-size:16px !important;
+}
+.leg small{
+  font-size:11px !important;
+}
+
+/* 04 PPD por gestor más alto */
+.ppdCard .ppdArea{
+  left:44px !important;
+  right:44px !important;
+  top:82px !important;
+  bottom:58px !important;
+}
+.ppdCard .ppdItem{
+  width:62px !important;
+}
+.ppdCard .ppdBar{
+  width:34px !important;
+}
+.ppdCard .ppdVal{
+  font-size:17px !important;
+}
+.ppdCard .ppdName{
+  font-size:12px !important;
+}
+.ppdCard .ppdState{
+  font-size:15px !important;
+}
+.ppdCard .ppdSummary{
+  left:44px !important;
+  right:44px !important;
+  bottom:12px !important;
+  font-size:13px !important;
+}
+.ppdCard .ppdSummary b{
+  font-size:17px !important;
+}
+
+/* 05 y 06 rankings grandes */
+.rankPermCard .hnames,
+.rankVisCard .hnames{
+  left:18px !important;
+  top:76px !important;
+  width:104px !important;
+  font-size:13px !important;
+  line-height:32px !important;
+}
+.rankPermCard .hbarArea,
+.rankVisCard .hbarArea{
+  left:135px !important;
+  right:92px !important;
+  top:72px !important;
+  bottom:36px !important;
+}
+.rankPermCard .hrow,
+.rankVisCard .hrow{
+  margin:9px 0 !important;
+  grid-template-columns:1fr 42px !important;
+}
+.rankPermCard .hfill,
+.rankVisCard .hfill{
+  height:22px !important;
+  border-radius:4px !important;
+}
+.rankPermCard .hnum,
+.rankVisCard .hnum{
+  font-size:17px !important;
+}
+.rankPermCard .totalSide,
+.rankVisCard .totalSide{
+  right:8px !important;
+  top:76px !important;
+  bottom:30px !important;
+  width:78px !important;
+}
+.rankPermCard .totalSide .ttl,
+.rankVisCard .totalSide .ttl{
+  font-size:9.5px !important;
+}
+.rankPermCard .totalSide .n,
+.rankVisCard .totalSide .n{
+  font-size:28px !important;
+}
+.rankPermCard .totalSide .s,
+.rankVisCard .totalSide .s{
+  font-size:15px !important;
+}
+
+/* Colores del ranking 05 según estado PPD */
+.hfill.ppdGreen{
+  background:linear-gradient(90deg,#159b29,#56df54) !important;
+}
+.hfill.ppdYellow{
+  background:linear-gradient(90deg,#ffb300,#ffe16a) !important;
+}
+.hfill.ppdRed{
+  background:linear-gradient(90deg,#d60000,#ff6b6b) !important;
+}
+.footer{
+  left:40px !important;
+  right:40px !important;
+  bottom:2px !important;
+  font-size:13px !important;
+  opacity:.85 !important;
+}
+body.presentation .footer{
+  right:40px !important;
+}
+
+
+/* AJUSTE DANIEL V1 - centrar cuadros laterales de ranking */
+.rankPermCard .totalSide,
+.rankVisCard .totalSide{
+    top: 110px !important;
+    bottom: 55px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:space-between !important;
+}
+
+.rankPermCard .totalSide > div,
+.rankVisCard .totalSide > div{
+    flex:1 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+}
+
+
+
+/* ================= AJUSTE FINAL DANIEL · CUADROS INFERIORES MÁS ANCHOS =================
+   Aplicado sobre ADMIN_V5_4_TV43_FINAL_6_PANELES_CENTRADO.
+   Objetivo: paneles 05/06 más equilibrados en TV 43", cuadros laterales +1cm aprox.
+   ============================================================================== */
+.rankPermCard .totalSide,
+.rankVisCard .totalSide{
+  width:115px !important;
+  top:95px !important;
+  bottom:40px !important;
+  right:10px !important;
+  border-radius:13px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:space-between !important;
+}
+.rankPermCard .totalSide > div,
+.rankVisCard .totalSide > div{
+  flex:1 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  padding:10px 8px !important;
+}
+.rankPermCard .totalSide .ttl,
+.rankVisCard .totalSide .ttl{
+  font-size:10.5px !important;
+  line-height:1.15 !important;
+}
+.rankPermCard .totalSide .n,
+.rankVisCard .totalSide .n{
+  font-size:34px !important;
+  line-height:1.05 !important;
+}
+.rankPermCard .totalSide .s,
+.rankVisCard .totalSide .s{
+  font-size:18px !important;
+  line-height:1.05 !important;
+}
+.rankPermCard .hbarArea,
+.rankVisCard .hbarArea{
+  left:132px !important;
+  right:140px !important;
+  top:72px !important;
+  bottom:36px !important;
+}
+.rankPermCard .hnames,
+.rankVisCard .hnames{
+  left:14px !important;
+  width:108px !important;
+}
+.rankPermCard .hfill,
+.rankVisCard .hfill{
+  height:23px !important;
+}
+.rankPermCard .hnum,
+.rankVisCard .hnum{
+  font-size:18px !important;
+}
+
+
+/* ADMIN V5.6 · Cuadro 03 con columna de porcentajes */
+.origenCard{position:relative !important;}
+.origenCard .donutBox{height:270px !important;grid-template-columns:165px 1fr !important;}
+.origenCard .legend{
+  gap:12px !important;
+  font-size:15px !important;
+}
+.origenCard .legendHead,
+.origenCard .leg{
+  display:grid !important;
+  grid-template-columns:22px minmax(0,1fr) 54px 64px !important;
+  gap:8px !important;
+  align-items:center !important;
+}
+.origenCard .legendHead{
+  color:#c8d6e8;
+  font-size:10px !important;
+  font-weight:900 !important;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  padding-bottom:2px;
+  border-bottom:1px solid rgba(255,255,255,.16);
+}
+.origenCard .legendHead span:nth-child(3),
+.origenCard .legendHead span:nth-child(4),
+.origenCard .leg b,
+.origenCard .leg .pct{
+  text-align:right !important;
+}
+.origenCard .leg b{
+  font-size:17px !important;
+  font-weight:900 !important;
+}
+.origenCard .leg .pct{
+  font-size:15px !important;
+  font-weight:900 !important;
+}
+.origenCard .pctFirm{color:#ff3535;}
+.origenCard .pctInc{color:#ffffff;}
+.origenCard .pctTotal{color:#79cf3a;}
+
+
+/* ADMIN V5.6.1 · KPI superior y recuadro editable bajo cuadro 03 */
+.kpiTop .lab{line-height:1.12 !important;}
+.kpiTop .sub{text-transform:none !important;}
+.origenCard .donutBox{height:222px !important; margin-top:4px !important;}
+.origenEditable{
+  width:7cm;
+  height:1cm;
+  margin:4px auto 0;
+  border:2px solid rgba(255,255,255,.62);
+  border-radius:9px;
+  background:rgba(3,15,30,.55);
+  box-shadow:inset 0 0 14px rgba(255,255,255,.04), 0 6px 14px rgba(0,0,0,.24);
+  color:#ffffff;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.15;
+  padding:5px 9px;
+  outline:none;
+  overflow:hidden;
+}
+.origenEditable:empty:before{
+  content:attr(data-placeholder);
+  color:rgba(255,255,255,.38);
+}
+
+
+
+/* ADMIN V5.6.3 · Encabezado KPI ampliado +0,5cm y títulos a 16px */
+.kpiStrip{
+  height:116px !important;
+  border-radius:22px !important;
+  padding:14px 22px !important;
+  align-items:center !important;
+}
+.kpiTop{
+  height:88px !important;
+  grid-template-columns:72px 1fr !important;
+  gap:18px !important;
+  padding:0 18px !important;
+}
+.kpiTop .icon{
+  width:64px !important;
+  height:64px !important;
+  border-radius:16px !important;
+  font-size:25px !important;
+}
+.kpiTop .lab{
+  font-size:16px !important;
+  line-height:1.1 !important;
+  letter-spacing:.2px !important;
+  white-space:normal !important;
+}
+.kpiTop .val{
+  font-size:46px !important;
+  line-height:.92 !important;
+  margin-top:7px !important;
+}
+.kpiTop .sub{
+  font-size:18px !important;
+  line-height:1.05 !important;
+  margin-top:6px !important;
+  color:#fff !important;
+}
+.top{
+  margin-bottom:10px !important;
+}
+.dashboard{
+  grid-template-rows:360px 360px !important;
+}
+.origenEditable{
+  width:7cm !important;
+  height:1cm !important;
+}
+
+
+
+/* AJUSTE DANIEL V5.6.4 · Encabezado KPI sin cuadro de fondo */
+.kpiStrip{
+  background:transparent !important;
+  border:none !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  padding:8px 12px !important;
+  height:118px !important;
+  overflow:visible !important;
+}
+.kpiTop{
+  border-right:1px solid rgba(255,255,255,.18) !important;
+  height:98px !important;
+  overflow:visible !important;
+}
+.kpiTop:last-child{border-right:0 !important;}
+.kpiTop .lab,
+.kpiTop .val,
+.kpiTop .sub{
+  overflow:visible !important;
+  text-shadow:0 3px 5px rgba(0,0,0,.65) !important;
+}
+
+</style>
+</head>
+<body class="presentation">
+<div class="stage">
+  <div class="top">
+    <div class="title">
+      <h1>INFORME GERENCIAL <span>EDIFICIOS EN POZO</span></h1>
+      <div class="subtitle" id="subtitulo">PERÍODO: ABRIL · MAYO · JUNIO 2026 | ÚLTIMO MES: JUNIO</div>
+    </div>
+    <div class="kpiStrip">
+      <div class="kpiTop"><div class="icon iBlue">📅</div><div><div class="lab">Laborables mes</div><div class="val" id="kLab">21</div><div class="sub">Días</div></div></div>
+      <div class="kpiTop"><div class="icon iOrange">✓</div><div><div class="lab">Trabajados</div><div class="val" id="kDias">20</div><div class="sub" id="kDiasSub">Días trabajados</div></div></div>
+      <div class="kpiTop"><div class="icon iGreen">▣</div><div><div class="lab">Permisos<br>acumulados</div><div class="val" id="kPerm">180</div><div class="sub">Junio</div></div></div>
+      <div class="kpiTop"><div class="icon iPurple">⚠</div><div><div class="lab">Faltantes<br>objetivo</div><div class="val" id="kFaltanTop">198</div><div class="sub">Faltantes</div></div></div>
+    </div>
+    <div class="logo"><div class="barsLogo"><div></div><div></div><div></div></div><div>EDIFICIOS<br><small>EN POZO</small></div></div>
+  </div>
+
+  <div class="dashboard">
+    <div class="card permitsCard">
+      <div class="cardTitle"><div class="numBox">01</div><div><h2>Evolución de Permisos</h2><div class="desc">Total general: Permisos SI + Base Incidencias SI</div></div></div>
+      <div class="chartArea"><div class="gridlines"></div><div class="cols" id="permCols"><div class="colWrap"><div class="valueTop">17</div><div class="col" style="height:12px;background:linear-gradient(#ffc400,#ff7b16)"></div><div class="xlab">ABRIL</div></div><div class="colWrap"><div class="valueTop">126</div><div class="col" style="height:92px;background:linear-gradient(#ffc400,#ff7b16)"></div><div class="xlab">MAYO</div></div><div class="colWrap"><div class="valueTop">180</div><div class="col" style="height:131px;background:linear-gradient(#ffc400,#ff7b16)"></div><div class="xlab">JUNIO<br>Actual</div></div><div class="colWrap"><div class="valueTop">189</div><div class="col" style="height:138px;background:linear-gradient(#ffc400,#ff7b16)"></div><div class="xlab">JUNIO<br>Proyectado</div></div></div></div>
+      <div class="sideBox"><div class="mini">Permisos Junio</div><div class="bigBlue" id="sidePerm">180</div><div class="sep"></div><div class="mini">Proyección Cierre</div><div class="bigGreen" id="sideProjPerm">189</div><div class="sep"></div><div class="mini">Objetivo</div><div class="bigBlue" id="sideObjPerm">378</div></div>
+      <div class="growthPanel"><div class="growthTitle">📈 Crecimiento<span>Intermensual</span></div><div class="growthRows" id="growthMini">
+    <div class="gr"><span>Abr → May</span><b class="pos">+641,2%</b></div>
+    <div class="gr"><span>May → Jun</span><b class="pos">+42,9%</b></div>
+    <div class="gr"><span>May → Jun Proy.</span><b class="pos">+50,0%</b></div></div></div>
+    </div>
+
+    <div class="card visitasCard">
+      <div class="cardTitle"><div class="numBox">02</div><div><h2>Evolución de Visitas</h2><div class="desc">Cantidad de visitas registradas</div></div></div>
+      <div class="chartArea"><div class="gridlines"></div><div class="cols" id="visCols"><div class="colWrap"><div class="valueTop">953</div><div class="col" style="height:101px;background:linear-gradient(#1fb7ff,#006bd7)"></div><div class="xlab">ABRIL</div></div><div class="colWrap"><div class="valueTop">1.128</div><div class="col" style="height:119px;background:linear-gradient(#1fb7ff,#006bd7)"></div><div class="xlab">MAYO</div></div><div class="colWrap"><div class="valueTop">1.246</div><div class="col" style="height:131px;background:linear-gradient(#1fb7ff,#006bd7)"></div><div class="xlab">JUNIO<br>Actual</div></div><div class="colWrap"><div class="valueTop">1.308</div><div class="col" style="height:138px;background:linear-gradient(#1fb7ff,#006bd7)"></div><div class="xlab">JUNIO<br>Proyectado</div></div></div></div>
+      <div class="sideBox"><div class="mini">Total Visitas</div><div class="bigBlue" id="sideVis">1.246</div><div class="sep"></div><div class="mini">Proyección Cierre</div><div class="bigGreen" id="sideProjVis">1.308</div><div class="sep"></div><div class="mini">Objetivo</div><div class="bigBlue" id="sideObjVis">1.260</div></div>
+      <div class="growthPanel visitasGrowthPanel"><div class="growthTitle">📈 Crecimiento<span>Intermensual</span></div><div class="growthRows" id="growthVisMini">
+    <div class="gr"><span>Abr → May</span><b class="pos">+18,4%</b></div>
+    <div class="gr"><span>May → Jun</span><b class="pos">+10,5%</b></div>
+    <div class="gr"><span>May → Jun Proy.</span><b class="pos">+16,0%</b></div></div></div>
+    </div>
+
+    <div class="card origenCard">
+      <div class="cardTitle"><div class="numBox">03</div><div><h2>Origen de Permisos</h2><div class="desc">Junio: firmados vs base incidencias</div></div></div>
+      <div class="donutBox">
+        <div class="donut" id="donutOrigen" style="background: conic-gradient(rgb(214, 0, 0) 0deg, rgb(214, 0, 0) 48.8889%, rgb(255, 255, 255) 48.8889%, rgb(255, 255, 255) 100%);"><span id="donutOrigenTxt">180</span></div>
+        <div class="legend">
+          <div class="legendHead"><span></span><span>Concepto</span><span>N°</span><span>%</span></div>
+          <div class="leg"><span class="sq" style="background:#d60000"></span><div>Permisos firmados<small>Origen comercial</small></div><b id="legFirm">88</b><span class="pct pctFirm" id="pctFirm">48,9%</span></div>
+          <div class="leg"><span class="sq" style="background:#ffffff;border:1px solid rgba(255,255,255,.65)"></span><div>Base incidencias<small>Permisos computables</small></div><b id="legInc">92</b><span class="pct pctInc" id="pctInc">51,1%</span></div>
+          <div class="leg"><span class="sq" style="background:#79cf3a"></span><div>Total general<small>Suma de ambos orígenes</small></div><b id="legTotal">180</b><span class="pct pctTotal" id="pctTotal">100%</span></div>
+        </div>
+      </div>
+      <div class="origenEditable" contenteditable="true" data-placeholder="Editable"></div>
+    </div>
+
+    <div class="card ppdCard">
+      <div class="cardTitle"><div class="numBox">05</div><div><h2>PPD por Gestor</h2><div class="desc">Permisos por día · Objetivo 3,0 PPD</div></div></div>
+      <div class="ppdArea"><div class="objLine"></div><div class="objLabel">OBJETIVO<br>3,0 PPD</div><div class="ppdBars" id="ppdBars"><div class="ppdItem" title="Daniela · Alcanzando objetivo"><div class="ppdVal">2,40</div><div class="ppdBar" style="height:100px;background:linear-gradient(180deg,#56df54,#159b29)"></div><div class="ppdName">Daniela</div><div class="ppdState">🟢</div></div><div class="ppdItem" title="Agustina · Alcanzando objetivo"><div class="ppdVal">2,35</div><div class="ppdBar" style="height:98px;background:linear-gradient(180deg,#56df54,#159b29)"></div><div class="ppdName">Agustina</div><div class="ppdState">🟢</div></div><div class="ppdItem" title="Nahuel · Alcanzando objetivo"><div class="ppdVal">2,15</div><div class="ppdBar" style="height:90px;background:linear-gradient(180deg,#56df54,#159b29)"></div><div class="ppdName">Nahuel</div><div class="ppdState">🟢</div></div><div class="ppdItem" title="Germán · Bajo seguimiento"><div class="ppdVal">1,45</div><div class="ppdBar" style="height:60px;background:linear-gradient(180deg,#ffe16a,#ffb300)"></div><div class="ppdName">Germán</div><div class="ppdState">🟡</div></div><div class="ppdItem" title="Gustavo · Crítico"><div class="ppdVal">0,45</div><div class="ppdBar" style="height:19px;background:linear-gradient(180deg,#ff6b6b,#d60000)"></div><div class="ppdName">Gustavo</div><div class="ppdState">🔴</div></div><div class="ppdItem" title="León · Crítico"><div class="ppdVal">0,20</div><div class="ppdBar" style="height:8px;background:linear-gradient(180deg,#ff6b6b,#d60000)"></div><div class="ppdName">León</div><div class="ppdState">🔴</div></div></div></div>
+      <div class="ppdSummary"><div>PPD EQUIPO<b id="ppdEquipo">9,00</b></div><div>PROMEDIO<b id="ppdProm">1,50</b></div><div>OBJETIVO<b>3,00</b></div></div>
+    </div>
+
+    <div class="card rankPermCard">
+      <div class="cardTitle"><div class="numBox">04</div><div><h2>Ranking de Permisos</h2><div class="desc">Acumulado mensual por gestor</div></div></div>
+      <div class="hnames" id="permNames">Daniela<br>Agustina<br>Nahuel<br>Germán<br>Gustavo<br>León</div><div class="hbarArea" id="permRank"><div class="hrow"><div class="hfill ppdGreen" style="width:100%"></div><div class="hnum">48</div></div><div class="hrow"><div class="hfill ppdGreen" style="width:98%"></div><div class="hnum">47</div></div><div class="hrow"><div class="hfill ppdGreen" style="width:90%"></div><div class="hnum">43</div></div><div class="hrow"><div class="hfill ppdYellow" style="width:60%"></div><div class="hnum">29</div></div><div class="hrow"><div class="hfill ppdRed" style="width:19%"></div><div class="hnum">9</div></div><div class="hrow"><div class="hfill ppdRed" style="width:8%"></div><div class="hnum">4</div></div></div>
+      <div class="totalSide"><div><div class="ttl">Total permisos junio</div><div class="n" id="totalPermSide">180</div></div><div><div class="ttl">Días trabajados</div><div class="s" id="daysSide">20 de 21</div></div></div>
+    </div>
+
+    <div class="card rankVisCard">
+      <div class="cardTitle"><div class="numBox">06</div><div><h2>Ranking de Visitas</h2><div class="desc">Acumulado mensual por gestor</div></div></div>
+      <div class="hnames" id="visNames">Daniela<br>Nahuel<br>Agustina<br>Germán<br>Gustavo<br>León</div><div class="hbarArea" id="visRank"><div class="hrow"><div class="hfill teal" style="width:100%"></div><div class="hnum">253</div></div><div class="hrow"><div class="hfill teal" style="width:95%"></div><div class="hnum">240</div></div><div class="hrow"><div class="hfill teal" style="width:93%"></div><div class="hnum">236</div></div><div class="hrow"><div class="hfill teal" style="width:82%"></div><div class="hnum">207</div></div><div class="hrow"><div class="hfill teal" style="width:65%"></div><div class="hnum">164</div></div><div class="hrow"><div class="hfill teal" style="width:58%"></div><div class="hnum">146</div></div></div>
+      <div class="totalSide"><div><div class="ttl">Total visitas junio</div><div class="n" id="totalVisSide">1.246</div></div><div><div class="ttl">Días trabajados</div><div class="s" id="daysSide2">20 de 21</div></div></div>
+    </div>
+
+    <div class="card proj">
+      <div class="cardTitle"><div class="numBox">07</div><div><h2>Proyección de Cierre</h2><div class="desc">Calculada en base al rendimiento actual</div></div></div>
+      <div class="projLayout">
+        <div class="stack"><div class="smallK"><div class="lab">Permisos acumulados</div><div class="val" id="pAcum">180</div></div><div class="smallK"><div class="lab">PPD promedio</div><div class="val" id="pPpd">9,0</div></div></div>
+        <div class="gaugeWrap"><div class="projNum"><div class="lab">Proyección cierre junio</div><div class="n" id="pProj">189</div><div class="lab" style="color:#ffc400">permisos estimados</div></div><div><div class="gauge" id="gauge" style="background: conic-gradient(from 270deg at 50% 100%, rgb(0, 105, 217) 0deg, rgb(37, 167, 255) 90deg, rgb(230, 234, 241) 90deg, rgb(230, 234, 241) 180deg, transparent 180deg);"><div class="gaugePct" id="gaugePct">50%</div></div><div class="gaugeLabels" id="gaugeLabels">DEL OBJETIVO MENSUAL<br>(378 PERMISOS)</div></div></div>
+        <div class="stack"><div class="smallK"><div class="lab">Permisos faltantes reales</div><div class="val" id="pFaltan">198</div></div><div class="smallK"><div class="lab">Objetivo mensual</div><div class="val" id="pObj">378</div></div></div>
+      </div>
+    </div>
+
+    <div class="card conclusion">
+      <div class="cardTitle"><div class="numBox">08</div><div><h2>Semáforo Operativo</h2><div class="desc">Estado por PPD acumulado</div></div></div>
+      <div class="semaforoItems" id="semaforoItems">
+    <div class="semaforoBlock"><div class="dot" style="background:#23c94a">✓</div><div><div class="titleS">Alcanzando objetivo</div><div class="namesS">Daniela · Agustina · Nahuel</div><div class="noteS">Productividad superior a 2,0 PPD</div></div></div>
+    <div class="semaforoBlock"><div class="dot" style="background:#ffc400;color:#071d36">!</div><div><div class="titleS">Bajo seguimiento</div><div class="namesS">Germán</div><div class="noteS">Germán debe quedar en amarillo bajo seguimiento</div></div></div>
+    <div class="semaforoBlock"><div class="dot" style="background:#ff3535">×</div><div><div class="titleS">Crítico</div><div class="namesS">Gustavo · León</div><div class="noteS">Productividad menor a 1,0 PPD</div></div></div></div>
+    </div>
+  </div>
+
+  <div class="footer">🚀 TABLERO EJECUTIVO DINÁMICO DESDE EXCEL <span>CARGÁ EXCEL Y EDITÁ LABORABLES / TRABAJADOS / OBJETIVO.</span></div>
+
+  
+</div>
+
+<script>
+const EMBEDDED = {"datos": [{"MES": "Abril", "GESTOR": "Agustina Castillo", "PERMISOS_SI": "", "CLIENTES_BASE_INCIDENCIAS_SI": "", "TOTAL_GENERAL": 1, "VISITAS": 191, "CONVERSION": 0.005235602094240838, "OBSERVACION": "Abril/Mayo: total permisos y visitas del histórico"}, {"MES": "Abril", "GESTOR": "Daniela Orjes", "PERMISOS_SI": "", "CLIENTES_BASE_INCIDENCIAS_SI": "", "TOTAL_GENERAL": 0, "VISITAS": 169, "CONVERSION": 0, "OBSERVACION": "Abril/Mayo: total permisos y visitas del histórico"}, {"MES": "Abril", "GESTOR": "Germán Portela", "PERMISOS_SI": "", "CLIENTES_BASE_INCIDENCIAS_SI": "", "TOTAL_GENERAL": 7, "VISITAS": 155, "CONVERSION": 0.04516129032258064, "OBSERVACION": "Abril/Mayo: total permisos y visitas del histórico"}, {"MES": "Abril", "GESTOR": "Gustavo Juarez", "PERMISOS_SI": "", "CLIENTES_BASE_INCIDENCIAS_SI": "", "TOTAL_GENERAL": 1, "VISITAS": 136, "CONVERSION": 0.007352941176470588, "OBSERVACION": "Abril/Mayo: total permisos y visitas del histórico"}, {"MES": "Abril", "GESTOR": "León López", "PERMISOS_SI": "", "CLIENTES_BASE_INCIDENCIAS_SI": "", "TOTAL_GENERAL": 8, "VISITAS": 156, "CONVERSION": 0.05128205128205128, "OBSERVACION": "Abril/Mayo: total permisos y visitas del histórico"}, {"MES": "Abril", "GESTOR": "Nahuel Olmos", "PERMISOS_SI": "", "CLIENTES_BASE_INCIDENCIAS_SI": "", "TOTAL_GENERAL": 0, "VISITAS": 146, "CONVERSION": 0, "OBSERVACION": "Abril/Mayo: total permisos y visitas del histórico"}, {"MES": "Mayo", "GESTOR": "Agustina Castillo", "PERMISOS_SI": "", "CLIENTES_BASE_INCIDENCIAS_SI": "", "TOTAL_GENERAL": 33, "VISITAS": 207, "CONVERSION": 0.15942028985507245, "OBSERVACION": "Abril/Mayo: total permisos y visitas del histórico"}, {"MES": "Mayo", "GESTOR": "Daniela Orjes", "PERMISOS_SI": "", "CLIENTES_BASE_INCIDENCIAS_SI": "", "TOTAL_GENERAL": 22, "VISITAS": 204, "CONVERSION": 0.10784313725490197, "OBSERVACION": "Abril/Mayo: total permisos y visitas del histórico"}, {"MES": "Mayo", "GESTOR": "Germán Portela", "PERMISOS_SI": "", "CLIENTES_BASE_INCIDENCIAS_SI": "", "TOTAL_GENERAL": 21, "VISITAS": 181, "CONVERSION": 0.11602209944751381, "OBSERVACION": "Abril/Mayo: total permisos y visitas del histórico"}, {"MES": "Mayo", "GESTOR": "Gustavo Juarez", "PERMISOS_SI": "", "CLIENTES_BASE_INCIDENCIAS_SI": "", "TOTAL_GENERAL": 9, "VISITAS": 170, "CONVERSION": 0.052941176470588235, "OBSERVACION": "Abril/Mayo: total permisos y visitas del histórico"}, {"MES": "Mayo", "GESTOR": "León López", "PERMISOS_SI": "", "CLIENTES_BASE_INCIDENCIAS_SI": "", "TOTAL_GENERAL": 15, "VISITAS": 164, "CONVERSION": 0.09146341463414634, "OBSERVACION": "Abril/Mayo: total permisos y visitas del histórico"}, {"MES": "Mayo", "GESTOR": "Nahuel Olmos", "PERMISOS_SI": "", "CLIENTES_BASE_INCIDENCIAS_SI": "", "TOTAL_GENERAL": 26, "VISITAS": 202, "CONVERSION": 0.12871287128712872, "OBSERVACION": "Abril/Mayo: total permisos y visitas del histórico"}, {"MES": "Junio", "GESTOR": "Agustina Castillo", "PERMISOS_SI": 19, "CLIENTES_BASE_INCIDENCIAS_SI": 27, "TOTAL_GENERAL": 46, "VISITAS": 202, "CONVERSION": 0.22772277227722773, "OBSERVACION": "Junio: permisos desde imagen; visitas desde Excel actualizado"}, {"MES": "Junio", "GESTOR": "Daniela Orjes", "PERMISOS_SI": 19, "CLIENTES_BASE_INCIDENCIAS_SI": 22, "TOTAL_GENERAL": 41, "VISITAS": 203, "CONVERSION": 0.2019704433497537, "OBSERVACION": "Junio: permisos desde imagen; visitas desde Excel actualizado"}, {"MES": "Junio", "GESTOR": "Germán Portela", "PERMISOS_SI": 22, "CLIENTES_BASE_INCIDENCIAS_SI": 6, "TOTAL_GENERAL": 28, "VISITAS": 195, "CONVERSION": 0.14358974358974358, "OBSERVACION": "Junio: permisos desde imagen; visitas desde Excel actualizado"}, {"MES": "Junio", "GESTOR": "Gustavo Juarez", "PERMISOS_SI": 1, "CLIENTES_BASE_INCIDENCIAS_SI": 6, "TOTAL_GENERAL": 7, "VISITAS": 140, "CONVERSION": 0.05, "OBSERVACION": "Junio: permisos desde imagen; visitas desde Excel actualizado"}, {"MES": "Junio", "GESTOR": "León López", "PERMISOS_SI": 1, "CLIENTES_BASE_INCIDENCIAS_SI": 3, "TOTAL_GENERAL": 4, "VISITAS": 143, "CONVERSION": 0.027972027972027972, "OBSERVACION": "Junio: permisos desde imagen; visitas desde Excel actualizado"}, {"MES": "Junio", "GESTOR": "Nahuel Olmos", "PERMISOS_SI": 13, "CLIENTES_BASE_INCIDENCIAS_SI": 23, "TOTAL_GENERAL": 36, "VISITAS": 171, "CONVERSION": 0.21052631578947367, "OBSERVACION": "Junio: permisos desde imagen; visitas desde Excel actualizado"}, {"MES": "TOTAL", "GESTOR": "", "PERMISOS_SI": 75, "CLIENTES_BASE_INCIDENCIAS_SI": 87, "TOTAL_GENERAL": 305, "VISITAS": 3135, "CONVERSION": 0.09728867623604466, "OBSERVACION": "Totales automáticos"}], "resumen": [{"MES": "Abril", "PERMISOS_SI": 0, "CLIENTES_BASE_INCIDENCIAS_SI": 0, "TOTAL_GENERAL": 17, "VISITAS": 953, "CONVERSION": 0.017838405036726127}, {"MES": "Mayo", "PERMISOS_SI": 0, "CLIENTES_BASE_INCIDENCIAS_SI": 0, "TOTAL_GENERAL": 126, "VISITAS": 1128, "CONVERSION": 0.11170212765957446}, {"MES": "Junio", "PERMISOS_SI": 75, "CLIENTES_BASE_INCIDENCIAS_SI": 87, "TOTAL_GENERAL": 162, "VISITAS": 1054, "CONVERSION": 0.15370018975332067}, {"MES": "TOTAL", "PERMISOS_SI": 75, "CLIENTES_BASE_INCIDENCIAS_SI": 87, "TOTAL_GENERAL": 305, "VISITAS": 3135, "CONVERSION": 0.09728867623604466}]};
+
+
+function fitStage(){
+  const scale = Math.min(window.innerWidth/1650, window.innerHeight/930);
+  document.documentElement.style.setProperty('--stage-scale', Math.max(0.1, scale).toFixed(4));
+}
+window.addEventListener('resize', fitStage);
+window.addEventListener('orientationchange', fitStage);
+fitStage();
+
+function activarPresentacion(){
+  document.body.classList.add('presentation');
+  const el = document.documentElement;
+  if (el.requestFullscreen) el.requestFullscreen().catch(()=>{});
+}
+
+
+
+function generarIndexTV(){
+  try{
+    const originalBodyClass = document.body.className;
+    document.body.classList.add('presentation');
+    let doc = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    document.body.className = originalBodyClass;
+    doc = doc.replace(/<title>.*?<\/title>/i, '<title>index · Edificios en Pozo TV</title>');
+    doc = doc.replace(/<div class="admin">[\s\S]*?<\/div>\s*<\/div>\s*<script>/, function(m){
+      return m.replace(/<div class="admin">[\s\S]*?<\/div>/, '')
+              .replace('<script>', '<script>');
+    });
+    doc = doc.replace('<body class="presentation">', '<body class="presentation">');
+    doc = doc.replace('<body class="presentation">', '<body class="presentation">');
+    const blob = new Blob([doc], {type:'text/html;charset=utf-8'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'index.html';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    document.getElementById('status').textContent = 'ADMIN V5.6.3 · KPI ampliado + editable 7x1';
+  } catch(e){ alert('No se pudo generar index: ' + e.message); }
+}
+
+// ===== LECTOR XLSX OFFLINE EMBEBIDO =====
+// No requiere Internet ni librerías externas. Compatible con archivos .xlsx generados por Excel.
+function readUInt32LE(dv, off){ return dv.getUint32(off, true); }
+function readUInt16LE(dv, off){ return dv.getUint16(off, true); }
+function bytesToText(bytes){ return new TextDecoder('utf-8').decode(bytes); }
+function colToIndex(ref){
+  const letters = String(ref||'').replace(/[^A-Z]/gi,'').toUpperCase();
+  let n = 0;
+  for (const ch of letters) n = n * 26 + (ch.charCodeAt(0) - 64);
+  return Math.max(0, n - 1);
+}
+async function inflateRaw(bytes){
+  if (!('DecompressionStream' in window)) {
+    throw new Error('Tu navegador no soporta descompresión offline de XLSX. Usá Chrome o Edge actualizado.');
+  }
+  const ds = new DecompressionStream('deflate-raw');
+  const stream = new Blob([bytes]).stream().pipeThrough(ds);
+  return new Uint8Array(await new Response(stream).arrayBuffer());
+}
+async function unzipEntries(arrayBuffer){
+  const bytes = new Uint8Array(arrayBuffer);
+  const dv = new DataView(arrayBuffer);
+  let eocd = -1;
+  for (let i = bytes.length - 22; i >= Math.max(0, bytes.length - 66000); i--) {
+    if (readUInt32LE(dv, i) === 0x06054b50) { eocd = i; break; }
+  }
+  if (eocd < 0) throw new Error('No se pudo leer el archivo .xlsx. Verificá que no sea .xls.');
+  const total = readUInt16LE(dv, eocd + 10);
+  let cdOff = readUInt32LE(dv, eocd + 16);
+  const files = {};
+  for (let i = 0; i < total; i++) {
+    if (readUInt32LE(dv, cdOff) !== 0x02014b50) break;
+    const method = readUInt16LE(dv, cdOff + 10);
+    const compSize = readUInt32LE(dv, cdOff + 20);
+    const nameLen = readUInt16LE(dv, cdOff + 28);
+    const extraLen = readUInt16LE(dv, cdOff + 30);
+    const commentLen = readUInt16LE(dv, cdOff + 32);
+    const localOff = readUInt32LE(dv, cdOff + 42);
+    const name = bytesToText(bytes.slice(cdOff + 46, cdOff + 46 + nameLen));
+    const lfNameLen = readUInt16LE(dv, localOff + 26);
+    const lfExtraLen = readUInt16LE(dv, localOff + 28);
+    const dataStart = localOff + 30 + lfNameLen + lfExtraLen;
+    const comp = bytes.slice(dataStart, dataStart + compSize);
+    if (method === 0) files[name] = comp;
+    else if (method === 8) files[name] = await inflateRaw(comp);
+    cdOff += 46 + nameLen + extraLen + commentLen;
+  }
+  return files;
+}
+function xmlDoc(text){ return new DOMParser().parseFromString(text, 'application/xml'); }
+function relsMap(files, path){
+  const data = files[path];
+  if (!data) return {};
+  const xml = xmlDoc(bytesToText(data));
+  const map = {};
+  xml.querySelectorAll('Relationship').forEach(r => map[r.getAttribute('Id')] = r.getAttribute('Target'));
+  return map;
+}
+function parseSharedStrings(files){
+  const data = files['xl/sharedStrings.xml'];
+  if (!data) return [];
+  const xml = xmlDoc(bytesToText(data));
+  return Array.from(xml.querySelectorAll('si')).map(si => Array.from(si.querySelectorAll('t')).map(t => t.textContent || '').join(''));
+}
+function sheetToRows(files, sheetPath, shared){
+  const data = files[sheetPath];
+  if (!data) return [];
+  const xml = xmlDoc(bytesToText(data));
+  const rows = [];
+  xml.querySelectorAll('sheetData row').forEach(row => {
+    const arr = [];
+    row.querySelectorAll('c').forEach(c => {
+      const idx = colToIndex(c.getAttribute('r'));
+      const type = c.getAttribute('t');
+      let val = '';
+      if (type === 'inlineStr') {
+        val = Array.from(c.querySelectorAll('is t')).map(t => t.textContent || '').join('');
+      } else {
+        const v = c.querySelector('v');
+        val = v ? v.textContent : '';
+        if (type === 's') val = shared[parseInt(val || '0', 10)] || '';
+        else if (val !== '' && !isNaN(Number(val))) val = Number(val);
+      }
+      arr[idx] = val;
+    });
+    rows.push(arr);
+  });
+  return rows;
+}
+function rowsToJson(rows){
+  if (!rows.length) return [];
+  const headers = rows[0].map(h => String(h ?? '').trim());
+  return rows.slice(1).filter(r => r && r.some(v => v !== undefined && v !== '')).map(r => {
+    const obj = {};
+    headers.forEach((h,i) => { if (h) obj[h] = r[i] ?? ''; });
+    return obj;
+  });
+}
+async function readXlsxOffline(file){
+  if (!file.name.toLowerCase().endsWith('.xlsx')) {
+    throw new Error('Este lector offline acepta archivos .xlsx. Guardá el Excel como .xlsx y volvé a cargarlo.');
+  }
+  const files = await unzipEntries(await file.arrayBuffer());
+  const shared = parseSharedStrings(files);
+  const wbRels = relsMap(files, 'xl/_rels/workbook.xml.rels');
+  const wb = xmlDoc(bytesToText(files['xl/workbook.xml']));
+  const result = {};
+  wb.querySelectorAll('sheets sheet').forEach(s => {
+    const name = s.getAttribute('name') || 'Hoja';
+    const rid = s.getAttribute('r:id') || s.getAttribute('id');
+    let target = wbRels[rid] || '';
+    target = target.replace(/^\//,'');
+    const sheetPath = target.startsWith('xl/') ? target : 'xl/' + target;
+    result[name] = rowsToJson(sheetToRows(files, sheetPath, shared));
+  });
+  return result;
+}
+// ===== FIN LECTOR XLSX OFFLINE =====
+
+let rawData = EMBEDDED.datos || [];
+let rawResumen = EMBEDDED.resumen || [];
+
+function n(v) {
+  if (v === null || v === undefined || v === "") return 0;
+  if (typeof v === "number") return v;
+  let s = String(v).replace(/\./g,"").replace(",",".").replace("%","");
+  let x = parseFloat(s);
+  return isNaN(x) ? 0 : x;
+}
+function fmt(x) { return Math.round(n(x)).toLocaleString("es-AR"); }
+function fmt1(x) { return n(x).toLocaleString("es-AR", {minimumFractionDigits:1, maximumFractionDigits:1}); }
+function pct(x) { return (n(x)*100).toLocaleString("es-AR", {minimumFractionDigits:1, maximumFractionDigits:1}) + "%"; }
+function shortName(s) { return String(s||"").split(" ")[0].replace("German","Germán").replace("Leon","León"); }
+function cleanMes(s) { return String(s||"").trim().toLowerCase(); }
+function get(row, names) {
+  for (const k of names) {
+    if (row[k] !== undefined) return row[k];
+    const found = Object.keys(row).find(x => x.trim().toLowerCase() === k.trim().toLowerCase());
+    if (found) return row[found];
+  }
+  return "";
+}
+function monthRows(mes) {
+  return rawData.filter(r => cleanMes(get(r,["MES"])) === mes && String(get(r,["GESTOR"])).trim() !== "" && cleanMes(get(r,["MES"])) !== "total");
+}
+function sumRows(rows, colNames) { return rows.reduce((a,r)=>a+n(get(r,colNames)),0); }
+
+// Permisos siempre calculados desde las dos columnas base.
+// Esto evita que el tablero use TOTAL_GENERAL viejo si Excel no recalculó fórmulas.
+function permisosRow(r) {
+  const firm = n(get(r,["PERMISOS_SI","Permisos SI","Permisos Firmados","Permisos firmados"]));
+  const inc = n(get(r,["CLIENTES_BASE_INCIDENCIAS_SI","Base Incidencias SI","Clientes Base Incidencias SI","BASE_INCIDENCIAS_SI"]));
+  const total = n(get(r,["TOTAL_GENERAL","Total General"]));
+  return (firm || inc) ? (firm + inc) : total;
+}
+function sumPermisos(rows) { return rows.reduce((a,r)=>a+permisosRow(r),0); }
+
+function resumenMes(mes) {
+  // CORRECCIÓN V5.4 DANIEL: usar siempre la hoja de datos como fuente principal.
+  // Motivo: si se cargan visitas nuevas en Datos_ABR_MAY_JUN pero la hoja Resumen queda vieja,
+  // el tablero mostraba visitas antiguas. Ahora suma las filas reales por mes.
+  const rows = monthRows(mes);
+  if (rows.length) {
+    const firmados = sumRows(rows,["PERMISOS_SI","Permisos SI","Permisos Firmados","Permisos firmados"]);
+    const incidencias = sumRows(rows,["CLIENTES_BASE_INCIDENCIAS_SI","Base Incidencias SI","Clientes Base Incidencias SI","BASE_INCIDENCIAS_SI"]);
+    return {
+      permisos: (firmados || incidencias) ? (firmados + incidencias) : sumPermisos(rows),
+      firmados: firmados,
+      incidencias: incidencias,
+      visitas: sumRows(rows,["VISITAS","Visitas"])
+    };
+  }
+  // Fallback: solo si no hay filas en la hoja de datos, usar Resumen.
+  const row = rawResumen.find(r => cleanMes(get(r,["MES"])) === mes);
+  if (row) {
+    return {
+      permisos: n(get(row,["TOTAL_GENERAL","Total General"])),
+      firmados: n(get(row,["PERMISOS_SI","Permisos SI"])),
+      incidencias: n(get(row,["CLIENTES_BASE_INCIDENCIAS_SI","Base Incidencias SI"])),
+      visitas: n(get(row,["VISITAS","Visitas"]))
+    };
+  }
+  return {permisos:0, firmados:0, incidencias:0, visitas:0};
+}
+
+function renderCols(id, data, color1, color2) {
+  const max = Math.max(...data.map(d=>d.value),1);
+  document.getElementById(id).innerHTML = data.map(d => {
+    const h = Math.max(2, Math.round((d.value/max)*138));
+    return `<div class="colWrap"><div class="valueTop">${fmt(d.value)}</div><div class="col" style="height:${h}px;background:linear-gradient(${color1},${color2})"></div><div class="xlab">${d.label}</div></div>`;
+  }).join("");
+}
+
+function fmt2(x) { return n(x).toLocaleString("es-AR", {minimumFractionDigits:2, maximumFractionDigits:2}); }
+function growthPct(curr, prev) {
+  if (!prev) return 0;
+  return ((curr - prev) / prev);
+}
+function fmtGrowth(x) {
+  const sign = x >= 0 ? "+" : "";
+  return sign + (x*100).toLocaleString("es-AR", {minimumFractionDigits:1, maximumFractionDigits:1}) + "%";
+}
+function growthClass(x) { return x >= 0 ? "pos" : (x > -0.05 ? "warn" : "neg"); }
+function renderGrowth(abrPerm, mayPerm, junPerm, projPerm) {
+  const g1 = growthPct(mayPerm, abrPerm);
+  const g2 = growthPct(junPerm, mayPerm);
+  const g3 = growthPct(projPerm, mayPerm);
+  const el = document.getElementById("growthMini");
+  if (!el) return;
+  el.innerHTML = `
+    <div class="gr"><span>Abr → May</span><b class="${growthClass(g1)}">${fmtGrowth(g1)}</b></div>
+    <div class="gr"><span>May → Jun</span><b class="${growthClass(g2)}">${fmtGrowth(g2)}</b></div>
+    <div class="gr"><span>May → Jun Proy.</span><b class="${growthClass(g3)}">${fmtGrowth(g3)}</b></div>`;
+}
+
+function renderGrowthVisitas(abrVis, mayVis, junVis, projVis) {
+  const g1 = growthPct(mayVis, abrVis);
+  const g2 = growthPct(junVis, mayVis);
+  const g3 = growthPct(projVis, mayVis);
+  const el = document.getElementById("growthVisMini");
+  if (!el) return;
+  el.innerHTML = `
+    <div class="gr"><span>Abr → May</span><b class="${growthClass(g1)}">${fmtGrowth(g1)}</b></div>
+    <div class="gr"><span>May → Jun</span><b class="${growthClass(g2)}">${fmtGrowth(g2)}</b></div>
+    <div class="gr"><span>May → Jun Proy.</span><b class="${growthClass(g3)}">${fmtGrowth(g3)}</b></div>`;
+}
+
+function ppdState(ppd, name) {
+  if (ppd >= 2.0) return {icon:"🟢", color:"linear-gradient(180deg,#56df54,#159b29)", label:"Alcanzando objetivo"};
+  if (ppd >= 1.0) return {icon:"🟡", color:"linear-gradient(180deg,#ffe16a,#ffb300)", label: shortName(name)==="Germán" ? "Bajo seguimiento" : "Bajo seguimiento"};
+  return {icon:"🔴", color:"linear-gradient(180deg,#ff6b6b,#d60000)", label:"Crítico"};
+}
+function renderPPD(rows, diasTrab) {
+  const ranked = [...rows].map(r => {
+    const perm = permisosRow(r);
+    const name = shortName(get(r,["GESTOR"]));
+    const ppd = diasTrab ? perm/diasTrab : 0;
+    return {name, perm, ppd, state: ppdState(ppd, name)};
+  }).sort((a,b)=>b.ppd-a.ppd);
+  const maxObj = 3.0;
+  document.getElementById("ppdBars").innerHTML = ranked.map(d => {
+    const h = Math.max(4, Math.min(125, Math.round(d.ppd/maxObj*125)));
+    const label = d.name === "Germán" ? "Bajo seguimiento" : d.state.label;
+    return `<div class="ppdItem" title="${d.name} · ${label}"><div class="ppdVal">${fmt2(d.ppd)}</div><div class="ppdBar" style="height:${h}px;background:${d.state.color}"></div><div class="ppdName">${d.name}</div><div class="ppdState">${d.state.icon}</div></div>`;
+  }).join("");
+  const totalPpd = ranked.reduce((a,d)=>a+d.ppd,0);
+  document.getElementById("ppdEquipo").textContent = fmt2(totalPpd);
+  document.getElementById("ppdProm").textContent = fmt2(ranked.length ? totalPpd/ranked.length : 0);
+  renderSemaforo(ranked);
+}
+function renderSemaforo(ranked) {
+  const verdes = ranked.filter(d=>d.ppd>=2).map(d=>d.name);
+  const amarillos = ranked.filter(d=>d.ppd>=1 && d.ppd<2).map(d=>d.name);
+  const rojos = ranked.filter(d=>d.ppd<1).map(d=>d.name);
+  const el = document.getElementById("semaforoItems");
+  if (!el) return;
+  el.innerHTML = `
+    <div class="semaforoBlock"><div class="dot" style="background:#23c94a">✓</div><div><div class="titleS">Alcanzando objetivo</div><div class="namesS">${verdes.join(" · ") || "—"}</div><div class="noteS">Productividad superior a 2,0 PPD</div></div></div>
+    <div class="semaforoBlock"><div class="dot" style="background:#ffc400;color:#071d36">!</div><div><div class="titleS">Bajo seguimiento</div><div class="namesS">${amarillos.join(" · ") || "—"}</div><div class="noteS">Germán debe quedar en amarillo bajo seguimiento</div></div></div>
+    <div class="semaforoBlock"><div class="dot" style="background:#ff3535">×</div><div><div class="titleS">Crítico</div><div class="namesS">${rojos.join(" · ") || "—"}</div><div class="noteS">Productividad menor a 1,0 PPD</div></div></div>`;
+}
+
+
+function renderPermRankColored(rows, diasTrab) {
+  const ranked = [...rows].map(r => {
+    const name = shortName(get(r,["GESTOR"]));
+    const value = permisosRow(r);
+    const ppd = diasTrab ? value / diasTrab : 0;
+    const cls = ppd >= 2.0 ? "ppdGreen" : (ppd >= 1.0 ? "ppdYellow" : "ppdRed");
+    return {name, value, cls};
+  }).sort((a,b)=>b.value-a.value);
+  const max = Math.max(...ranked.map(d=>d.value),1);
+  document.getElementById("permNames").innerHTML = ranked.map(d=>d.name).join("<br>");
+  document.getElementById("permRank").innerHTML = ranked.map(d => {
+    const w = Math.max(4, Math.round(d.value/max*100));
+    return `<div class="hrow"><div class="hfill ${d.cls}" style="width:${w}%"></div><div class="hnum">${fmt(d.value)}</div></div>`;
+  }).join("");
+  document.getElementById("totalPermSide").textContent = fmt(ranked.reduce((a,d)=>a+d.value,0));
+}
+
+function renderRank(rows, metricNames, namesId, rankId, totalId, teal=false) {
+  const ranked = [...rows].map(r => ({
+    name: shortName(get(r,["GESTOR"])),
+    value: n(get(r,metricNames))
+  })).sort((a,b)=>b.value-a.value);
+  const max = Math.max(...ranked.map(d=>d.value),1);
+  document.getElementById(namesId).innerHTML = ranked.map(d=>d.name).join("<br>");
+  document.getElementById(rankId).innerHTML = ranked.map(d => {
+    const w = Math.max(4, Math.round(d.value/max*100));
+    return `<div class="hrow"><div class="hfill ${teal?'teal':''}" style="width:${w}%"></div><div class="hnum">${fmt(d.value)}</div></div>`;
+  }).join("");
+  document.getElementById(totalId).textContent = fmt(ranked.reduce((a,d)=>a+d.value,0));
+}
+
+function render() {
+  const diasTrab = Math.max(1, n(document.getElementById("diasTrab").value));
+  const diasLab = Math.max(diasTrab, n(document.getElementById("diasLab").value));
+  const objPerm = n(document.getElementById("objPerm").value);
+  const objVis = n(document.getElementById("objVis").value);
+  const diasRest = Math.max(0, diasLab-diasTrab);
+
+  const abr = resumenMes("abril");
+  const may = resumenMes("mayo");
+  const jun = resumenMes("junio");
+  const jRows = monthRows("junio");
+
+  const totalPerm = jun.permisos;
+  const totalVis = jun.visitas;
+  const firmados = jun.firmados;
+  const incidencias = jun.incidencias;
+  const gestores = new Set(jRows.map(r=>String(get(r,["GESTOR"])).trim()).filter(Boolean)).size;
+  const projPerm = Math.round(totalPerm/diasTrab*diasLab);
+  const projVis = Math.round(totalVis/diasTrab*diasLab);
+  const ppd = totalPerm/diasTrab;
+  const conv = totalVis ? totalPerm/totalVis : 0;
+  const compPerm = objPerm ? projPerm/objPerm : 0;
+  const faltan = Math.max(0, objPerm-totalPerm);
+
+  document.getElementById("subtitulo").textContent = "PERÍODO: ABRIL · MAYO · JUNIO 2026 | ÚLTIMO MES: JUNIO";
+  document.getElementById("kLab").textContent = fmt(diasLab);
+  document.getElementById("kDias").textContent = fmt(diasTrab);
+  document.getElementById("kDiasSub").textContent = "Días trabajados";
+  document.getElementById("kPerm").textContent = fmt(totalPerm);
+  document.getElementById("kFaltanTop").textContent = fmt(Math.max(0, objPerm-totalPerm));
+
+  renderCols("permCols", [
+    {label:"ABRIL",value:abr.permisos},{label:"MAYO",value:may.permisos},{label:"JUNIO<br>Actual",value:totalPerm},{label:"JUNIO<br>Proyectado",value:projPerm}
+  ], "#ffc400", "#ff7b16");
+  renderCols("visCols", [
+    {label:"ABRIL",value:abr.visitas},{label:"MAYO",value:may.visitas},{label:"JUNIO<br>Actual",value:totalVis},{label:"JUNIO<br>Proyectado",value:projVis}
+  ], "#1fb7ff", "#006bd7");
+
+  document.getElementById("sidePerm").textContent = fmt(totalPerm);
+  document.getElementById("sideProjPerm").textContent = fmt(projPerm);
+  document.getElementById("sideObjPerm").textContent = fmt(objPerm);
+  document.getElementById("sideVis").textContent = fmt(totalVis);
+  document.getElementById("sideProjVis").textContent = fmt(projVis);
+  document.getElementById("sideObjVis").textContent = fmt(objVis);
+  renderGrowth(abr.permisos, may.permisos, totalPerm, projPerm);
+  renderGrowthVisitas(abr.visitas, may.visitas, totalVis, projVis);
+
+  const pFirm = totalPerm ? firmados/totalPerm : 0;
+  document.getElementById("donutOrigen").style.background = `conic-gradient(#d60000 0 ${pFirm*100}%, #ffffff ${pFirm*100}% 100%)`;
+  document.getElementById("donutOrigenTxt").textContent = fmt(totalPerm);
+  document.getElementById("legFirm").textContent = fmt(firmados);
+  document.getElementById("legInc").textContent = fmt(incidencias);
+  document.getElementById("legTotal").textContent = fmt(totalPerm);
+  document.getElementById("pctFirm").textContent = totalPerm ? `${fmt1(firmados/totalPerm*100)}%` : "0,0%";
+  document.getElementById("pctInc").textContent = totalPerm ? `${fmt1(incidencias/totalPerm*100)}%` : "0,0%";
+  document.getElementById("pctTotal").textContent = totalPerm ? "100%" : "0%";
+
+  renderPPD(jRows, diasTrab);
+  renderPermRankColored(jRows, diasTrab);
+  renderRank(jRows, ["VISITAS","Visitas"], "visNames", "visRank", "totalVisSide", true);
+  document.getElementById("daysSide").textContent = `${fmt(diasTrab)} de ${fmt(diasLab)}`;
+  document.getElementById("daysSide2").textContent = `${fmt(diasTrab)} de ${fmt(diasLab)}`;
+
+  document.getElementById("pAcum").textContent = fmt(totalPerm);
+  document.getElementById("pPpd").textContent = fmt1(ppd);
+  document.getElementById("pProj").textContent = fmt(projPerm);
+  document.getElementById("pFaltan").textContent = fmt(faltan);
+  document.getElementById("pObj").textContent = fmt(objPerm);
+  const gaugeDeg = Math.min(180, Math.max(0, compPerm*180));
+  document.getElementById("gauge").style.background = `conic-gradient(from 270deg at 50% 100%, #0069d9 0deg,#25a7ff ${gaugeDeg}deg,#e6eaf1 ${gaugeDeg}deg 180deg,transparent 180deg)`;
+  document.getElementById("gaugePct").textContent = Math.round(compPerm*100) + "%";
+  document.getElementById("gaugeLabels").innerHTML = `DEL OBJETIVO MENSUAL<br>(${fmt(objPerm)} PERMISOS)`;
+}
+
+document.getElementById("btnAplicar").addEventListener("click", () => { render(); document.getElementById("status").textContent="Actualizado · datos nuevos cargados"; });
+document.getElementById("btnPantalla").addEventListener("click", activarPresentacion);
+document.getElementById("btnIndex").addEventListener("click", generarIndexTV);
+document.addEventListener("fullscreenchange", () => { if(!document.fullscreenElement) document.body.classList.remove("presentation"); fitStage(); });
+document.getElementById("excelFile").addEventListener("change", async (ev) => {
+  const file = ev.target.files[0];
+  if (!file) return;
+  try {
+    const wb = await readXlsxOffline(file);
+    const sheetNames = Object.keys(wb);
+    const datosName = sheetNames.find(s => s.toLowerCase().includes("datos")) || sheetNames[0];
+    const resumenName = sheetNames.find(s => s.toLowerCase().includes("resumen"));
+    rawData = wb[datosName] || [];
+    rawResumen = resumenName ? (wb[resumenName] || []) : [];
+    const jun = monthRows("junio");
+    const firstDias = jun.length ? n(get(jun[0],["DIAS LABORALES","Dias Laborales","Días Laborales"])) : 0;
+    if (firstDias) document.getElementById("diasTrab").value = firstDias;
+    render();
+    document.getElementById("status").textContent = "Excel cargado";
+  } catch(e) {
+    document.getElementById("status").textContent = "Error XLSX";
+    alert(e.message);
+  }
+});
+render();
+</script>
+
+
+</body></html>
