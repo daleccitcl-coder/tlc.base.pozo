@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<!-- saved from url=(0093)file:///C:/Users/dalecci/Downloads/CRM_TELECENTRO_ENTERPRISE_V13_5_GUARDAR_SUBE_FOTOS_OK.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>CRM TELECENTRO ENTERPRISE V13</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{--azul:#082f5f;--gris:#d9d9d9;--borde:#555;--texto:#111}
+*{box-sizing:border-box}
+body{margin:0;background:#e9edf3;font-family:Arial,Helvetica,sans-serif;color:var(--texto)}
+.app{max-width:1180px;margin:16px auto;padding:0 12px}
+.toolbar{background:#fff;border-radius:12px;padding:12px;margin-bottom:12px;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.toolbar h2{margin:0 0 8px;color:var(--azul);font-size:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+label{display:block;font-size:11px;font-weight:bold;text-transform:uppercase;color:#31425c;margin-bottom:3px}
+input,textarea,select{width:100%;border:1px solid #c9d2df;border-radius:7px;padding:8px;font-size:13px;background:#fff}
+textarea{resize:vertical}
+button{border:0;border-radius:9px;padding:9px 13px;font-weight:bold;cursor:pointer;background:var(--azul);color:#fff}
+button.secondary{background:#edf3fb;color:var(--azul);border:1px solid #cbd8e8}
+button.green{background:#0f7a3c}
+button.red{background:#b42318}
+button.small{padding:5px 8px;font-size:12px;border-radius:7px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
+.msg{font-weight:bold;margin-top:7px;font-size:13px}.ok{color:#087a33}.bad{color:#b42318}
+.resultBox{margin-top:10px;border:1px solid #cbd8e8;border-radius:10px;background:#f8fbff;padding:8px;display:none}
+.resultTitle{font-size:12px;font-weight:bold;color:#082f5f;margin-bottom:6px}
+.resultItem{display:flex;justify-content:space-between;gap:8px;align-items:center;border:1px solid #d8e2ef;background:#fff;border-radius:8px;padding:7px 9px;margin:5px 0;font-size:13px}
+.txtbox{font-family:Consolas,monospace;min-height:140px}
+.adminPanel{display:none;margin-top:10px;border:1px solid #cbd8e8;border-radius:10px;background:#f8fbff;padding:10px}
+.adminList{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+.adminCol{border:1px solid #d8e2ef;border-radius:8px;background:#fff;padding:8px}
+.adminCol h4{margin:0 0 6px;color:var(--azul);font-size:13px}
+.adminItem{display:flex;gap:5px;margin:4px 0}.adminItem input{padding:5px;font-size:12px}
+
+.sheet{width:297mm;height:210mm;background:#fff;margin:0 auto 24px;padding:11mm 12mm 7mm;box-shadow:0 5px 22px rgba(0,0,0,.18);overflow:hidden;position:relative}
+.title{text-align:center;font-size:22px;font-weight:900;letter-spacing:.3px;margin:0 0 6px;text-transform:uppercase}
+.header{font-size:17px;font-weight:900;margin:0 0 7px}
+.mainTable{width:100%;border-collapse:collapse;font-size:12.3px;margin-bottom:7px}
+.mainTable td{border:1.15px solid var(--borde);padding:3.6px 6px;vertical-align:middle;height:24px}
+.lab{background:var(--gris);font-weight:900;width:17%}.val{width:33%}
+.mainTable input{border:0;border-radius:0;padding:0;background:transparent;font-size:12.3px;font-family:Arial,Helvetica,sans-serif;color:#000;width:100%}
+.sectionTitle{font-size:13px;font-weight:900;text-transform:uppercase;color:#777;margin:4px 0 3px;letter-spacing:.2px}
+.descPhotoGrid{display:grid;grid-template-columns:1.08fr .92fr;gap:12px;align-items:start}
+.bigText{border:0;border-top:1px solid #bbb;border-bottom:1px solid #bbb;border-radius:0;width:100%;font-size:12px;line-height:1.24;font-family:Arial,Helvetica,sans-serif;background:transparent;resize:none;padding:5px 0;overflow:hidden}
+#descripcion{height:120px;font-size:11.8px;line-height:1.24;font-weight:600;color:#000;white-space:pre-wrap;overflow:hidden}
+#observaciones{height:118px;font-size:11.4px;line-height:1.22;font-weight:600;color:#000;white-space:pre-wrap;overflow:hidden}
+.histText{border:1px solid var(--borde);height:34px;overflow:hidden;padding:5px 7px;font-size:11px;line-height:1.25;font-weight:700;white-space:pre-line;background:#fff;color:#000}
+.semaforoWrap{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:4px}
+.semaforoCard{border:1px solid #b8c4d6;border-radius:7px;background:#f8fbff;padding:4px;font-size:9.1px;line-height:1.12;min-height:48px;border-top:5px solid #607d8b}
+.semaforoCard.ok{background:#f1fbf5;border-color:#9ed8b6;border-top-color:#087a33}
+.semaforoCard.warn{background:#fffbea;border-color:#e5d568;border-top-color:#c5a400}
+.semaforoCard.def{background:#fff7ed;border-color:#fdba74;border-top-color:#d97706}
+.semaforoCard.bad{background:#fff1f1;border-color:#f3b0b0;border-top-color:#b42318}
+.semaforoCard.done{background:#eefbf3;border-color:#8fd3aa;border-top-color:#087a33}
+.semaforoCard b{display:block;font-size:10px;color:#082f5f;margin-bottom:2px}
+.bar{height:5px;border-radius:9px;background:#e2e8f0;margin-top:3px;overflow:hidden}.bar span{display:block;height:100%;background:#607d8b;width:0%}.scoreBox{margin-top:4px;border:1px solid #b8c4d6;border-radius:7px;background:#fff;padding:4px 6px;font-size:10.2px;font-weight:800;color:#082f5f}
+.invPanel{margin-top:8px;border:1px solid #cbd8e8;border-radius:10px;background:#f8fbff;padding:8px;display:none;font-size:12px}.invRow{display:grid;grid-template-columns:150px 1fr 125px;gap:6px;border-bottom:1px solid #e1e7ef;padding:5px 0}.invRow:last-child{border-bottom:0}.conf{font-weight:900}.conf.ok{color:#087a33}.conf.warn{color:#bd6b00}.conf.bad{color:#b42318}
+
+.photoGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.photoBox{height:106px;border:1.2px solid #aaa;background:#f6f7f9;display:flex;align-items:center;justify-content:center;overflow:hidden;font-weight:bold;color:#555;font-size:12px}
+.photoBox img{width:100%;height:100%;object-fit:cover;object-position:center center;display:none}
+.photoCaption{text-align:center;font-weight:800;font-size:11px;margin-top:3px;border-bottom:1px solid #aaa;padding-bottom:2px;min-height:16px}
+.photoControls{display:grid;grid-template-columns:1fr;gap:4px;margin-top:4px}
+.photoControls input{font-size:10.5px;padding:4px;border-radius:5px}
+
+.toastContainer{position:fixed;top:14px;right:14px;z-index:99999;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.toast{min-width:260px;max-width:420px;background:#fff;border-left:6px solid #082f5f;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.22);padding:10px 12px;font-size:13px;font-weight:800;color:#102033;animation:toastIn .18s ease-out}
+.toast.success{border-left-color:#0f7a3c}.toast.error{border-left-color:#b42318}.toast.warn{border-left-color:#bd6b00}.toast.info{border-left-color:#082f5f}
+@keyframes toastIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.modalBackdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:99990;display:none;align-items:center;justify-content:center}
+.modalBox{background:#fff;border-radius:14px;max-width:520px;width:92%;padding:18px;box-shadow:0 12px 34px rgba(0,0,0,.28)}
+.modalBox h3{margin:0 0 8px;color:#082f5f}.modalActions{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}
+
+.footer{position:absolute;left:12mm;right:12mm;bottom:4mm;text-align:center;color:#777;font-size:9px;border-top:1px solid #ddd;padding-top:3px}
+@media(max-width:900px){.sheet{width:100%;height:auto}.grid2,.grid3,.descPhotoGrid,.photoGrid,.adminList{grid-template-columns:1fr}.footer{position:static;margin-top:10px}}
+@page{size:A4 landscape;margin:0}
+@media print{body{background:#fff}.app{max-width:none;margin:0;padding:0}.toolbar,.noPrint,.photoControls{display:none!important}.sheet{box-shadow:none;margin:0;width:297mm;height:210mm;padding:11mm 12mm 7mm}.title{font-size:22px}.header{font-size:17px}}
+</style>
+</head>
+<body>
+<div id="toastContainer" class="toastContainer noPrint"></div>
+<div id="confirmModal" class="modalBackdrop noPrint" style="display: none;"><div class="modalBox"><h3 id="confirmTitle">Limpiar ficha</h3><div id="confirmText">¿Desea iniciar una nueva ficha? Se borrará todo lo cargado en pantalla.</div><div class="modalActions"><button class="secondary" id="confirmCancel">Cancelar</button><button class="red" id="confirmOk">Aceptar</button></div></div></div>
+<div class="app">
+
+<div class="toolbar noPrint">
+  <h2>CRM TELECENTRO ENTERPRISE <span style="font-size:12px;background:#e6f0fb;border:1px solid #cbd8e8;border-radius:999px;padding:3px 8px;margin-left:8px">V13 · Enterprise</span></h2>
+  <div style="font-size:12px;color:#5b6675;margin-bottom:6px">
+    CRM V13: CONFIG · LOG · HISTORIAL_90 · 2 fotos por link · Owner y Gestor separados · búsqueda flexible · hitos 90/15/7/10 días · mail diario.
+  </div>
+  <div class="grid2">
+    <div><label>URL Apps Script /exec</label><input id="webappUrl" placeholder="Pegá acá la URL /exec de Apps Script"></div>
+    <div><label>Buscar por ID o Dirección</label><input id="buscar" placeholder="Ej: 1468989 o Av Congreso 1686"></div>
+  </div>
+  <div class="actions">
+    <button onclick="buscarFicha()">Buscar Ficha Guardada</button>
+    <button class="secondary" onclick="buscarBase()">Buscar en Base</button>
+    <button class="green" onclick="guardarFicha()">Guardar Nueva Versión</button>
+    <button class="secondary" onclick="imprimirPDF()">Imprimir / PDF</button>
+    <button class="secondary" onclick="actualizarDesplegables()">Actualizar Desplegables</button>
+    <button class="secondary" onclick="abrirAdmin()">🔒 Administración</button>
+    <button class="red" onclick="limpiar()">Limpiar</button>
+  </div>
+  <div id="resultadosBase" class="resultBox" style="display: none;"></div>
+  <div id="investigacionPanel" class="invPanel" style="display: none;"></div>
+  <div id="msg" class="msg ok">Última versión recuperada desde FICHAS_CRM.</div>
+
+  <div id="adminPanel" class="adminPanel" style="display: none;">
+    <h3 style="margin:0 0 8px;color:#082f5f">Administración de desplegables</h3>
+    <div class="grid3">
+      <div style="display:none"><label>Clave administrador</label><input id="adminPass" type="password" placeholder="Clave"></div>
+      <div><label>Tipo de lista</label><select id="adminTipo"><option value="estadoRelevamiento">estadoRelevamiento</option><option value="estadoActual">estadoActual</option><option value="owner">owner</option><option value="gestor">gestor</option><option value="tipo">tipo</option><option value="ubicacion">ubicacion</option><option value="localidadPartido">localidadPartido</option><option value="desarrolladora">desarrolladora</option><option value="constructora">constructora</option><option value="comercializa">comercializa</option><option value="parametros">parametros</option></select></div>
+      <div><label>Nuevo valor</label><input id="adminNuevo" placeholder="Ej: Permiso firmado"></div>
+    </div>
+    <div class="actions">
+      <button onclick="adminAgregar()">Agregar</button>
+      <button class="green" onclick="guardarConfig()">Guardar CONFIG en Sheet</button>
+      <button class="secondary" onclick="renderAdmin()">Refrescar panel</button>
+    </div>
+    <div id="adminList" class="adminList"><div class="adminCol"><h4>estadoRelevamiento</h4>
+      <div class="adminItem">
+        <input value="Obra Detectada" onchange="adminEditar(&#39;estadoRelevamiento&#39;,0,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoRelevamiento&#39;,0)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Se Envía a Relevar" onchange="adminEditar(&#39;estadoRelevamiento&#39;,1,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoRelevamiento&#39;,1)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Prospecto Activo" onchange="adminEditar(&#39;estadoRelevamiento&#39;,2,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoRelevamiento&#39;,2)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Primera Visita" onchange="adminEditar(&#39;estadoRelevamiento&#39;,3,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoRelevamiento&#39;,3)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso Obrador en Negociación" onchange="adminEditar(&#39;estadoRelevamiento&#39;,4,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoRelevamiento&#39;,4)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso Obrador Firmado" onchange="adminEditar(&#39;estadoRelevamiento&#39;,5,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoRelevamiento&#39;,5)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Obrador Instalado" onchange="adminEditar(&#39;estadoRelevamiento&#39;,6,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoRelevamiento&#39;,6)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso Cableado en Negociación" onchange="adminEditar(&#39;estadoRelevamiento&#39;,7,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoRelevamiento&#39;,7)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso Cableado Firmado" onchange="adminEditar(&#39;estadoRelevamiento&#39;,8,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoRelevamiento&#39;,8)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Cableado" onchange="adminEditar(&#39;estadoRelevamiento&#39;,9,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoRelevamiento&#39;,9)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso en Negociación" onchange="adminEditar(&#39;estadoRelevamiento&#39;,10,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoRelevamiento&#39;,10)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso a Espera de Firma" onchange="adminEditar(&#39;estadoRelevamiento&#39;,11,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoRelevamiento&#39;,11)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso Firmado" onchange="adminEditar(&#39;estadoRelevamiento&#39;,12,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoRelevamiento&#39;,12)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="En Espera de Cableado" onchange="adminEditar(&#39;estadoRelevamiento&#39;,13,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoRelevamiento&#39;,13)">X</button>
+      </div></div><div class="adminCol"><h4>estadoActual</h4>
+      <div class="adminItem">
+        <input value="Prospecto Activo" onchange="adminEditar(&#39;estadoActual&#39;,0,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,0)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="En Etapa de Desarrollo / Construcción" onchange="adminEditar(&#39;estadoActual&#39;,1,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,1)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Obrador Instalado" onchange="adminEditar(&#39;estadoActual&#39;,2,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,2)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso Obrador en Negociación" onchange="adminEditar(&#39;estadoActual&#39;,3,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,3)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso Obrador Firmado" onchange="adminEditar(&#39;estadoActual&#39;,4,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,4)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso Cableado en Negociación" onchange="adminEditar(&#39;estadoActual&#39;,5,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,5)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso Cableado Firmado" onchange="adminEditar(&#39;estadoActual&#39;,6,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,6)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="A la Espera de Cableado" onchange="adminEditar(&#39;estadoActual&#39;,7,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,7)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Cableado" onchange="adminEditar(&#39;estadoActual&#39;,8,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,8)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Regularización de Permiso en Trámite" onchange="adminEditar(&#39;estadoActual&#39;,9,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,9)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso de Demolición en Trámite" onchange="adminEditar(&#39;estadoActual&#39;,10,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,10)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Obra Avanzada" onchange="adminEditar(&#39;estadoActual&#39;,11,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,11)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Obra Detenida" onchange="adminEditar(&#39;estadoActual&#39;,12,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,12)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Terminado" onchange="adminEditar(&#39;estadoActual&#39;,13,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,13)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso en Negociación" onchange="adminEditar(&#39;estadoActual&#39;,14,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,14)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso a Espera de Firma" onchange="adminEditar(&#39;estadoActual&#39;,15,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,15)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Permiso Firmado" onchange="adminEditar(&#39;estadoActual&#39;,16,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;estadoActual&#39;,16)">X</button>
+      </div></div><div class="adminCol"><h4>owner</h4>
+      <div class="adminItem">
+        <input value="Agustina Castillo" onchange="adminEditar(&#39;owner&#39;,0,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;owner&#39;,0)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Daniela Orjes" onchange="adminEditar(&#39;owner&#39;,1,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;owner&#39;,1)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Germán Portela" onchange="adminEditar(&#39;owner&#39;,2,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;owner&#39;,2)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Gustavo Juarez" onchange="adminEditar(&#39;owner&#39;,3,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;owner&#39;,3)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="León López Fontanet" onchange="adminEditar(&#39;owner&#39;,4,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;owner&#39;,4)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Nahuel Olmos" onchange="adminEditar(&#39;owner&#39;,5,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;owner&#39;,5)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Nicolás Scampini" onchange="adminEditar(&#39;owner&#39;,6,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;owner&#39;,6)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Natalia Mansilla" onchange="adminEditar(&#39;owner&#39;,7,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;owner&#39;,7)">X</button>
+      </div></div><div class="adminCol"><h4>gestor</h4>
+      <div class="adminItem">
+        <input value="Agustina Castillo" onchange="adminEditar(&#39;gestor&#39;,0,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;gestor&#39;,0)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Daniela Orjes" onchange="adminEditar(&#39;gestor&#39;,1,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;gestor&#39;,1)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Germán Portela" onchange="adminEditar(&#39;gestor&#39;,2,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;gestor&#39;,2)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Gustavo Juarez" onchange="adminEditar(&#39;gestor&#39;,3,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;gestor&#39;,3)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="León López Fontanet" onchange="adminEditar(&#39;gestor&#39;,4,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;gestor&#39;,4)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Nahuel Olmos" onchange="adminEditar(&#39;gestor&#39;,5,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;gestor&#39;,5)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Nicolás Scampini" onchange="adminEditar(&#39;gestor&#39;,6,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;gestor&#39;,6)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Natalia Mansilla" onchange="adminEditar(&#39;gestor&#39;,7,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;gestor&#39;,7)">X</button>
+      </div></div><div class="adminCol"><h4>tipo</h4>
+      <div class="adminItem">
+        <input value="Edificio" onchange="adminEditar(&#39;tipo&#39;,0,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;tipo&#39;,0)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Torre" onchange="adminEditar(&#39;tipo&#39;,1,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;tipo&#39;,1)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="PH" onchange="adminEditar(&#39;tipo&#39;,2,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;tipo&#39;,2)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Complejo" onchange="adminEditar(&#39;tipo&#39;,3,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;tipo&#39;,3)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Residencial" onchange="adminEditar(&#39;tipo&#39;,4,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;tipo&#39;,4)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Mixto" onchange="adminEditar(&#39;tipo&#39;,5,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;tipo&#39;,5)">X</button>
+      </div></div><div class="adminCol"><h4>ubicacion</h4>
+      <div class="adminItem">
+        <input value="CABA" onchange="adminEditar(&#39;ubicacion&#39;,0,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;ubicacion&#39;,0)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Oeste" onchange="adminEditar(&#39;ubicacion&#39;,1,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;ubicacion&#39;,1)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Norte" onchange="adminEditar(&#39;ubicacion&#39;,2,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;ubicacion&#39;,2)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Sur" onchange="adminEditar(&#39;ubicacion&#39;,3,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;ubicacion&#39;,3)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="La Plata" onchange="adminEditar(&#39;ubicacion&#39;,4,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;ubicacion&#39;,4)">X</button>
+      </div></div><div class="adminCol"><h4>localidadPartido</h4>
+      <div class="adminItem">
+        <input value="CABA" onchange="adminEditar(&#39;localidadPartido&#39;,0,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;localidadPartido&#39;,0)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Caballito" onchange="adminEditar(&#39;localidadPartido&#39;,1,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;localidadPartido&#39;,1)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Flores" onchange="adminEditar(&#39;localidadPartido&#39;,2,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;localidadPartido&#39;,2)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Villa Urquiza" onchange="adminEditar(&#39;localidadPartido&#39;,3,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;localidadPartido&#39;,3)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Saavedra" onchange="adminEditar(&#39;localidadPartido&#39;,4,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;localidadPartido&#39;,4)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Palermo" onchange="adminEditar(&#39;localidadPartido&#39;,5,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;localidadPartido&#39;,5)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="Belgrano" onchange="adminEditar(&#39;localidadPartido&#39;,6,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;localidadPartido&#39;,6)">X</button>
+      </div></div><div class="adminCol"><h4>desarrolladora</h4><small>Sin valores</small></div><div class="adminCol"><h4>constructora</h4><small>Sin valores</small></div><div class="adminCol"><h4>comercializa</h4><small>Sin valores</small></div><div class="adminCol"><h4>parametros</h4>
+      <div class="adminItem">
+        <input value="CICLO_DIAS=90" onchange="adminEditar(&#39;parametros&#39;,0,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;parametros&#39;,0)">X</button>
+      </div>
+      <div class="adminItem">
+        <input value="ALERTA_DIAS=90,15,7,0" onchange="adminEditar(&#39;parametros&#39;,1,this.value)">
+        <button class="small red" onclick="adminBorrar(&#39;parametros&#39;,1)">X</button>
+      </div></div></div>
+  </div>
+</div>
+
+<div class="toolbar noPrint">
+  <h2>Pegar plantilla del gestor</h2>
+  <textarea id="txtImport" class="txtbox" placeholder="Pegá acá:
+ID:
+Dirección:
+Localidad:
+Partido:
+Estado de relevamiento:
+Desarrolladora:
+Constructora:
+Comercializa:
+Tipo:
+Ubicación:
+Desarrollo:
+Estado actual:
+Amenities:
+Observaciones:
+Cant. Pisos:
+Cant. UF:
+Owner/Gestor:"></textarea>
+  <div class="actions">
+    <button onclick="parseTxt()">Autocompletar ficha</button>
+    <button class="secondary" onclick="document.getElementById(&#39;txtImport&#39;).value=&#39;&#39;">Limpiar TXT</button>
+  </div>
+</div>
+
+<datalist id="dl_estadoRelevamiento"><option value="Obra Detectada"></option><option value="Se Envía a Relevar"></option><option value="Prospecto Activo"></option><option value="Primera Visita"></option><option value="Permiso Obrador en Negociación"></option><option value="Permiso Obrador Firmado"></option><option value="Obrador Instalado"></option><option value="Permiso Cableado en Negociación"></option><option value="Permiso Cableado Firmado"></option><option value="Cableado"></option><option value="Permiso en Negociación"></option><option value="Permiso a Espera de Firma"></option><option value="Permiso Firmado"></option><option value="En Espera de Cableado"></option></datalist>
+<datalist id="dl_estadoActual"><option value="Prospecto Activo"></option><option value="En Etapa de Desarrollo / Construcción"></option><option value="Obrador Instalado"></option><option value="Permiso Obrador en Negociación"></option><option value="Permiso Obrador Firmado"></option><option value="Permiso Cableado en Negociación"></option><option value="Permiso Cableado Firmado"></option><option value="A la Espera de Cableado"></option><option value="Cableado"></option><option value="Regularización de Permiso en Trámite"></option><option value="Permiso de Demolición en Trámite"></option><option value="Obra Avanzada"></option><option value="Obra Detenida"></option><option value="Terminado"></option><option value="Permiso en Negociación"></option><option value="Permiso a Espera de Firma"></option><option value="Permiso Firmado"></option></datalist>
+<datalist id="dl_owner"><option value="Agustina Castillo"></option><option value="Daniela Orjes"></option><option value="Germán Portela"></option><option value="Gustavo Juarez"></option><option value="León López Fontanet"></option><option value="Nahuel Olmos"></option><option value="Nicolás Scampini"></option><option value="Natalia Mansilla"></option></datalist>
+<datalist id="dl_gestor"><option value="Agustina Castillo"></option><option value="Daniela Orjes"></option><option value="Germán Portela"></option><option value="Gustavo Juarez"></option><option value="León López Fontanet"></option><option value="Nahuel Olmos"></option><option value="Nicolás Scampini"></option><option value="Natalia Mansilla"></option></datalist>
+<datalist id="dl_tipo"><option value="Edificio"></option><option value="Torre"></option><option value="PH"></option><option value="Complejo"></option><option value="Residencial"></option><option value="Mixto"></option></datalist>
+<datalist id="dl_ubicacion"><option value="CABA"></option><option value="Oeste"></option><option value="Norte"></option><option value="Sur"></option><option value="La Plata"></option></datalist>
+<datalist id="dl_localidadPartido"><option value="CABA"></option><option value="Caballito"></option><option value="Flores"></option><option value="Villa Urquiza"></option><option value="Saavedra"></option><option value="Palermo"></option><option value="Belgrano"></option></datalist>
+<datalist id="dl_desarrolladora"></datalist>
+<datalist id="dl_constructora"></datalist>
+<datalist id="dl_comercializa"></datalist>
+
+<div class="sheet" id="ficha">
+  <h1 class="title">TELECENTRO | FICHA COMERCIAL DE PROSPECCIÓN</h1>
+  <div class="header">ID <span id="idHeader">1434078</span> - <span id="direccionHeader">Soler 4637</span></div>
+
+  <table class="mainTable">
+    <tbody><tr>
+      <td class="lab">Estado relevamiento</td><td class="val"><input id="estadoRelevamiento" list="dl_estadoRelevamiento"></td>
+      <td class="lab">Estado actual</td><td class="val"><input id="estadoActual" list="dl_estadoActual"></td>
+    </tr>
+    <tr>
+      <td class="lab">Owner / Gestor</td><td><div style="display:grid;grid-template-columns:1fr 1fr;gap:4px"><input id="owner" list="dl_owner" placeholder="Owner"><input id="gestor" list="dl_gestor" placeholder="Gestor"></div></td>
+      <td class="lab">Tipo de Proyecto</td><td><input id="tipo" list="dl_tipo"></td>
+    </tr>
+    <tr>
+      <td class="lab">Desarrolladora</td><td><input id="desarrolladora" list="dl_desarrolladora"></td>
+      <td class="lab">Constructora</td><td><input id="constructora" list="dl_constructora"></td>
+    </tr>
+    <tr>
+      <td class="lab">Comercializa</td><td><input id="comercializa" list="dl_comercializa"></td>
+      <td class="lab">Nombre desarrollo</td><td><input id="nombreDesarrollo"></td>
+    </tr>
+    <tr>
+      <td class="lab">Cant. Pisos</td><td><input id="cantPisos"></td>
+      <td class="lab">Cant. UF</td><td><input id="cantUF"></td>
+    </tr>
+    <tr>
+      <td class="lab">Localidad / Partido</td><td><input id="localidadPartido" list="dl_localidadPartido"></td>
+      <td class="lab">Ubicación</td><td><input id="ubicacion" list="dl_ubicacion"></td>
+    </tr>
+  </tbody></table>
+
+  <div class="descPhotoGrid">
+    <div>
+      <div class="sectionTitle">Descripción del desarrollo</div>
+      <textarea id="descripcion" class="bigText" placeholder="Desarrollo objetivo: pisos, UF, tipología, amenities, estado de obra..."></textarea>
+      <div class="sectionTitle">Observaciones comerciales</div>
+      <textarea id="observaciones" class="bigText" placeholder="Contacto, permiso, sala técnica, montantes, próxima acción..."></textarea>
+      <div class="sectionTitle">Seguimiento comercial</div>
+      <div id="histText" class="histText">Lunes 29/06/2026 | Permiso Obrador en Negociación
+29/06/2026 | Permiso Obrador en Negociación</div>
+      <div class="semaforoWrap" id="semaforoWrap"><div class="semaforoCard done"><b>Comercial</b>✅ Finalizado<br><small>Inicio: 29/06/2026 · Vence: 27/09/2026</small><div class="bar"><span style="width:1%;background:#087a33"></span></div><small>Finalizado</small></div><div class="semaforoCard ok"><b>Negociación</b>Día 1/15 · Restan 14<br><small>Inicio: 29/06/2026 · Vence: 14/07/2026</small><div class="bar"><span style="width:7%;background:#087a33"></span></div><small>En plazo</small></div><div class="semaforoCard"><b>Obrador</b>7 días desde Permiso Obrador Firmado</div><div class="semaforoCard"><b>Cableado</b>10 días desde Permiso Cableado Firmado</div></div>
+      <div id="opScore" class="scoreBox">Oportunidad comercial: 36/100 · 🔴 Prioridad Baja</div>
+    </div>
+
+    <div>
+      <div class="sectionTitle">Registro fotográfico</div>
+      <div class="photoGrid">
+        <div>
+          <div class="photoBox" id="box1"><span style="display: none;">FOTO OBRA 1</span><img id="img1" style="display: block;" src="./CRM TELECENTRO ENTERPRISE V13_files/foto_1_1782786334164.jpg"></div>
+          <div class="photoCaption" id="fotoFecha1View">2026-06-29T03:00:00.000Z</div>
+          <div class="photoControls noPrint">
+            <input type="file" id="fotoFile1" accept="image/*" onchange="previewFoto(1)">
+            <input id="fotoFecha1" placeholder="Fecha foto 1">
+            <input id="fotoObservacion1" placeholder="Observación foto 1">
+            <button class="small secondary" onclick="subirFoto(1)">Subir foto 1</button>
+          </div>
+        </div>
+        <div>
+          <div class="photoBox" id="box2"><span style="display: none;">FOTO OBRA 2</span><img id="img2" style="display: block;" src="./CRM TELECENTRO ENTERPRISE V13_files/foto_2_1782786341507.jpg"></div>
+          <div class="photoCaption" id="fotoFecha2View">2026-06-29T03:00:00.000Z</div>
+          <div class="photoControls noPrint">
+            <input type="file" id="fotoFile2" accept="image/*" onchange="previewFoto(2)">
+            <input id="fotoFecha2" placeholder="Fecha foto 2">
+            <input id="fotoObservacion2" placeholder="Observación foto 2">
+            <button class="small secondary" onclick="subirFoto(2)">Subir foto 2</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <input type="hidden" id="id" value="1434078">
+  <input type="hidden" id="direccion" value="Soler 4637">
+  <input type="hidden" id="localidad" value="Palermo">
+  <input type="hidden" id="partido" value="Cdad de Buenos Aires">
+  <input type="hidden" id="fotoLink1" value="https://drive.google.com/file/d/1nGrPA0tLT-hsfUc1fdfONVVe_61BkDYG/view?usp=drivesdk">
+  <input type="hidden" id="fotoLink2" value="https://drive.google.com/file/d/1RR1l-yxsF0XTaU02-k14MlvNQ5n-W0Mz/view?usp=drivesdk">
+  <input type="hidden" id="fotoCarpetaUrl" value="https://drive.google.com/drive/folders/1YEpqn29oMP5toO6gnJ8jT3TDe4_3DwT8">
+  <input type="hidden" id="fechaInicioCicloComercial" value="2026-06-29T03:00:00.000Z">
+  <input type="hidden" id="fechaPermisoNegociacion" value="2026-06-29T03:00:00.000Z">
+  <input type="hidden" id="fechaPermisoNegociacionCerrado" value="">
+  <input type="hidden" id="fechaPermisoObradorFirmado" value="">
+  <input type="hidden" id="fechaObradorInstalado" value="">
+  <input type="hidden" id="fechaPermisoCableadoFirmado" value="">
+  <input type="hidden" id="fechaCableado" value="">
+  <input type="hidden" id="plazoComercialDias" value="90">
+  <input type="hidden" id="plazoNegociacionDias" value="15">
+  <input type="hidden" id="plazoObradorDias" value="7">
+  <input type="hidden" id="plazoCableadoDias" value="10">
+  <div class="footer">CRM TELECENTRO ENTERPRISE • V13 • FOTOS POR LINK • ALERTAS MAIL</div>
+</div>
+
+</div>
+
+<script>
+const LS_URL = 'telecentro_v12_exec_url';
+const ADMIN_OPEN_PASSWORD = 'telecentro2026';
+let CONFIG = {
+  estadoRelevamiento:['Obra Detectada','Se Envía a Relevar','Prospecto Activo','Permiso General en Negociación','Permiso General Firmado','Permiso Obrador Firmado','Obrador Instalado','Permiso Cableado en Negociación','Permiso Cableado Firmado','Permiso en Negociación','Permiso a Espera de Firma','Permiso Firmado','En Espera de Cableado','Cableado'],
+  estadoActual:['Prospecto Activo','En Etapa de Desarrollo / Construcción','Permiso General en Negociación','Permiso General Firmado','Permiso Obrador Firmado','Obrador Instalado','Permiso Cableado en Negociación','Permiso Cableado Firmado','Permiso en Negociación','Permiso a Espera de Firma','Permiso Firmado','A la Espera de Cableado','Cableado','Regularización de Permiso en Trámite','Permiso de Demolición en Trámite','Obra Avanzada','Obra Detenida','Terminado'],
+  owner:['Daniel Alecci','Coordinación Comercial','Telecentro'],
+  gestor:['Agustina Castillo','Daniela Orjes','Germán Portela','Gustavo Juarez','León López Fontanet','Nahuel Olmos','Nicolás Scampini','Natalia Mansilla'],
+  tipo:['Edificio','Torre','PH','Complejo','Local Comercial','Lote / Baldío'],
+  ubicacion:['CABA','Oeste','Norte','Sur','La Plata'],
+  localidadPartido:['CABA','Caballito','Flores','Villa Urquiza','Saavedra','Palermo','Belgrano'],
+  desarrolladora:[], constructora:[], comercializa:[]
+};
+
+const fields = ['id','direccion','estadoRelevamiento','estadoActual','owner','gestor','desarrolladora','constructora','comercializa','tipo','localidadPartido','localidad','partido','nombreDesarrollo','ubicacion','cantPisos','cantUF','descripcion','observaciones','historial','fotoLink1','fotoFecha1','fotoObservacion1','fotoLink2','fotoFecha2','fotoObservacion2','fotoCarpetaUrl','fechaInicioCicloComercial','fechaPermisoNegociacion','fechaPermisoNegociacionCerrado','fechaPermisoObradorFirmado','fechaObradorInstalado','fechaPermisoCableadoFirmado','fechaCableado','plazoComercialDias','plazoNegociacionDias','plazoObradorDias','plazoCableadoDias'];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem(LS_URL);
+  resetAllState(false);
+  if (saved) document.getElementById('webappUrl').value = saved;
+  cargarConfig(true);
+  renderSemaforo();
+  renderOpportunityScore();
+  showPopup('CRM listo para trabajar', 'info', 1800);
+});
+
+function byId(id){ return document.getElementById(id); }
+function getVal(id){ const el=byId(id); return el ? (el.value || '') : ''; }
+function setVal(id,v){ const el=byId(id); if(el) el.value = v || ''; }
+function execUrl(){
+  const u = document.getElementById('webappUrl').value.trim();
+  if (u) localStorage.setItem(LS_URL,u);
+  return u;
+}
+function setMsg(t,bad=false){
+  const m=document.getElementById('msg');
+  if(m){ m.className='msg '+(bad?'bad':'ok'); m.textContent=t; }
+  showPopup(t, bad ? 'error' : 'success');
+}
+function showPopup(text,type='info',ms=3600){
+  const c=document.getElementById('toastContainer'); if(!c) return;
+  const div=document.createElement('div');
+  div.className='toast '+(type||'info');
+  const icon=type==='success'?'✅':type==='error'?'❌':type==='warn'?'⚠️':'ℹ️';
+  div.textContent=icon+' '+String(text||'');
+  c.appendChild(div);
+  setTimeout(()=>{ div.style.opacity='0'; div.style.transform='translateY(-8px)'; div.style.transition='all .25s'; setTimeout(()=>div.remove(),260); }, ms);
+}
+function confirmarAccion(titulo,texto){
+  return new Promise(resolve=>{
+    const modal=document.getElementById('confirmModal');
+    const ok=document.getElementById('confirmOk');
+    const cancel=document.getElementById('confirmCancel');
+    document.getElementById('confirmTitle').textContent=titulo||'Confirmar';
+    document.getElementById('confirmText').textContent=texto||'';
+    modal.style.display='flex';
+    const close=(val)=>{ modal.style.display='none'; ok.onclick=null; cancel.onclick=null; resolve(val); };
+    ok.onclick=()=>close(true); cancel.onclick=()=>close(false);
+  });
+}
+async function apiGet(action, params={}){
+  const u = execUrl();
+  if (!u) throw new Error('Falta URL Apps Script /exec');
+  const qs = new URLSearchParams(Object.assign({action}, params));
+  const r = await fetch(u + '?' + qs.toString());
+  return await r.json();
+}
+async function apiPost(body){
+  const u = execUrl();
+  if (!u) throw new Error('Falta URL Apps Script /exec');
+  const r = await fetch(u,{method:'POST',body:JSON.stringify(body)});
+  return await r.json();
+}
+
+function renderDatalists(){
+  Object.keys(CONFIG).forEach(k=>{
+    const dl = document.getElementById('dl_'+k);
+    if (!dl) return;
+    dl.innerHTML = (CONFIG[k]||[]).map(v=>`<option value="${escapeHtml(v)}"></option>`).join('');
+  });
+}
+function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g,m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m])); }
+
+async function cargarConfig(silent=false){
+  try{
+    if (execUrl()) {
+      const res = await apiGet('config');
+      if (!res.ok) throw new Error(res.error || 'No se pudo leer CONFIG');
+      if (res.config) CONFIG = res.config;
+    }
+    renderDatalists();
+    renderAdmin();
+    if(!silent) setMsg('Desplegables actualizados desde CONFIG.');
+  }catch(e){
+    renderDatalists();
+    renderAdmin();
+    if(!silent) setMsg('No pude actualizar CONFIG. Revisá URL /exec y permisos.', true);
+  }
+}
+function pedirClaveAdmin(){
+  const clave = prompt('Ingrese clave de administrador');
+  if (clave === null) return false;
+  if (String(clave).trim() !== ADMIN_OPEN_PASSWORD) {
+    showPopup('Clave de administrador incorrecta', 'error', 4200);
+    setMsg('Clave de administrador incorrecta.', true);
+    return false;
+  }
+  const pass = document.getElementById('adminPass');
+  if (pass) pass.value = clave.trim();
+  return true;
+}
+
+async function actualizarDesplegables(){
+  // V1.007: siempre pide clave antes de abrir el panel o recargar CONFIG.
+  if (!pedirClaveAdmin()) return;
+  await cargarConfig(false);
+  const p = document.getElementById('adminPanel');
+  if(p) p.style.display='block';
+  renderAdmin();
+  showPopup('Desplegables actualizados. Panel administrador abierto.', 'success', 4200);
+}
+
+function abrirAdmin(){
+  const p = document.getElementById('adminPanel');
+  if (!p) return;
+  if (p.style.display === 'block') {
+    p.style.display = 'none';
+    const pass = document.getElementById('adminPass');
+    if (pass) pass.value = '';
+    showPopup('Panel administrador cerrado. Para abrirlo nuevamente se pedirá clave.', 'info', 3200);
+    return;
+  }
+  // V1.007: no se reutiliza sesión anterior, siempre solicita clave al abrir.
+  const pass = document.getElementById('adminPass');
+  if (pass) pass.value = '';
+  if (!pedirClaveAdmin()) return;
+  p.style.display = 'block';
+  renderAdmin();
+  showPopup('Panel administrador abierto con clave válida.', 'success', 2600);
+}
+function renderAdmin(){
+  const tipo = document.getElementById('adminTipo');
+  if (tipo) tipo.innerHTML = Object.keys(CONFIG).map(k=>`<option value="${k}">${k}</option>`).join('');
+  const box = document.getElementById('adminList');
+  if (!box) return;
+  box.innerHTML = Object.keys(CONFIG).map(k=>{
+    const items = (CONFIG[k]||[]).map((v,i)=>`
+      <div class="adminItem">
+        <input value="${escapeHtml(v)}" onchange="adminEditar('${k}',${i},this.value)">
+        <button class="small red" onclick="adminBorrar('${k}',${i})">X</button>
+      </div>`).join('');
+    return `<div class="adminCol"><h4>${k}</h4>${items || '<small>Sin valores</small>'}</div>`;
+  }).join('');
+}
+function adminAgregar(){
+  const k = document.getElementById('adminTipo').value;
+  const v = document.getElementById('adminNuevo').value.trim();
+  if (!k || !v) return;
+  if (!CONFIG[k]) CONFIG[k]=[];
+  if (!CONFIG[k].includes(v)) CONFIG[k].push(v);
+  document.getElementById('adminNuevo').value='';
+  renderDatalists(); renderAdmin();
+}
+function adminEditar(k,i,v){ CONFIG[k][i]=v.trim(); renderDatalists(); }
+function adminBorrar(k,i){ CONFIG[k].splice(i,1); renderDatalists(); renderAdmin(); }
+async function guardarConfig(){
+  try{
+    let pass = document.getElementById('adminPass').value;
+    if (!pass) {
+      if (!pedirClaveAdmin()) return;
+      pass = document.getElementById('adminPass').value;
+    }
+    const res = await apiPost({action:'saveConfig',config:CONFIG,adminPassword:pass});
+    if (!res.ok) throw new Error(res.error || 'No se pudo guardar CONFIG');
+    setMsg('CONFIG guardado en Google Sheets.');
+    showPopup('CONFIG guardado correctamente', 'success', 3200);
+  }catch(e){ setMsg(e.message,true); }
+}
+
+function getData(){
+  autoSetMilestones();
+  const data = {};
+  fields.forEach(id=>{
+    const el = document.getElementById(id);
+    if (el) data[id] = el.value || '';
+  });
+  normalizeData(data);
+  if(!data.gestor) data.gestor = data.owner || '';
+  data.tipoProyecto = data.tipo || '';
+  data.historial = buildHistorial();
+  return data;
+}
+function fillData(data){
+  data = Object.assign({}, data || {});
+  normalizeData(data);
+  Object.keys(data||{}).forEach(k=>{
+    const el = document.getElementById(k);
+    if (el) el.value = data[k] || '';
+  });
+  if (data.gestor && document.getElementById('gestor') && !document.getElementById('gestor').value) document.getElementById('gestor').value = data.gestor;
+  if (data.tipoProyecto && !document.getElementById('tipo').value) document.getElementById('tipo').value = data.tipoProyecto;
+  renderHist(data.historial);
+  refreshHeaders();
+  showPhotoFromLink(1, data.fotoLink1 || '');
+  showPhotoFromLink(2, data.fotoLink2 || '');
+  updateFotoCaption(1); updateFotoCaption(2);
+  renderSemaforo();
+  renderOpportunityScore();
+}
+
+function fillDataPreservandoGestion(data){
+  // BASE_OBRAS / investigación externa NO deben pisar la gestión comercial.
+  const keep = {
+    estadoRelevamiento: document.getElementById('estadoRelevamiento').value,
+    estadoActual: document.getElementById('estadoActual').value,
+    observaciones: document.getElementById('observaciones').value,
+    historial: document.getElementById('histText').textContent,
+    fechaInicioCicloComercial: document.getElementById('fechaInicioCicloComercial').value,
+    fechaPermisoNegociacion: (document.getElementById('fechaPermisoNegociacion')||{}).value || '',
+    fechaPermisoNegociacionCerrado: (document.getElementById('fechaPermisoNegociacionCerrado')||{}).value || '',
+    fechaPermisoObradorFirmado: document.getElementById('fechaPermisoObradorFirmado').value,
+    fechaObradorInstalado: document.getElementById('fechaObradorInstalado').value,
+    fechaPermisoCableadoFirmado: document.getElementById('fechaPermisoCableadoFirmado').value,
+    fechaCableado: document.getElementById('fechaCableado').value
+  };
+  const merged = Object.assign({}, data || {});
+  ['estadoRelevamiento','estadoActual','observaciones','historial','fechaInicioCicloComercial','fechaPermisoNegociacion','fechaPermisoNegociacionCerrado','fechaPermisoObradorFirmado','fechaObradorInstalado','fechaPermisoCableadoFirmado','fechaCableado'].forEach(k=>{
+    if (keep[k]) merged[k] = keep[k];
+    else delete merged[k];
+  });
+  fillData(merged);
+}
+
+function refreshHeaders(){
+  document.getElementById('idHeader').textContent = document.getElementById('id').value || '';
+  document.getElementById('direccionHeader').textContent = document.getElementById('direccion').value || '';
+}
+['id','direccion','estadoActual'].forEach(id=>document.addEventListener('input', e=>{ if(e.target && e.target.id===id){ refreshHeaders(); if(id==='estadoActual'){ autoSetMilestones(); renderHist(buildHistorial()); renderSemaforo(); } }}));
+['cantUF','cantPisos','tipo','descripcion','observaciones'].forEach(id=>document.addEventListener('input', e=>{ if(e.target && e.target.id===id) renderOpportunityScore(); }));
+['direccion','estadoRelevamiento','estadoActual','owner','gestor','desarrolladora','constructora','comercializa','tipo','localidadPartido','localidad','partido','nombreDesarrollo','ubicacion','observaciones'].forEach(id=>document.addEventListener('blur', e=>{ if(e.target && e.target.id===id){ const o={}; o[id]=e.target.value; normalizeData(o); e.target.value=o[id]||''; refreshHeaders(); }}, true));
+
+function buildHistorial(){
+  const fecha = fechaDia();
+  const estado = document.getElementById('estadoActual').value || document.getElementById('estadoRelevamiento').value || '';
+  if (!estado) return '';
+  return JSON.stringify([{fecha, estado}]);
+}
+function renderHist(hist){
+  let arr = [];
+  try{ arr = JSON.parse(hist||'[]'); }catch(e){
+    arr = String(hist||'').split('\n').map(x=>{ const p=x.split('|'); return {fecha:(p[0]||'').trim(), estado:(p[1]||'').trim()};});
+  }
+  document.getElementById('histText').textContent = arr.filter(x=>x.fecha||x.estado).map(x=>`${x.fecha} | ${x.estado}`).join('\n');
+}
+
+async function guardarFicha(){
+  try{
+    refreshHeaders();
+
+    // V13.5: si el usuario seleccionó fotos y toca "Guardar Nueva Versión",
+    // primero las sube a Drive y carga fotoLink1/fotoLink2 en pantalla.
+    // Antes era obligatorio tocar "Subir foto 1/2"; por eso no aparecían links.
+    await subirFotosPendientes(false);
+
+    const data = getData();
+    const res = await apiPost({action:'save',data});
+    if (!res.ok) throw new Error(res.error || 'No se pudo guardar');
+    setMsg(`Nueva versión guardada en Sheet. Versión ${res.version || ''}`);
+  }catch(e){ setMsg(e.message,true); }
+}
+async function buscarFicha(){
+  try{
+    const q = document.getElementById('buscar').value.trim();
+    const res = await apiGet('search',{q});
+    if (!res.ok) throw new Error(res.error || 'No encontrada');
+    fillData(res.data);
+    setMsg('Última versión recuperada desde FICHAS_CRM.');
+  }catch(e){ setMsg(e.message,true); }
+}
+let BASE_RESULTS_CACHE = [];
+async function buscarBase(){
+  const box = document.getElementById('resultadosBase');
+  try{
+    const q = document.getElementById('buscar').value.trim();
+    box.style.display='block';
+    box.innerHTML = '<div class="resultTitle">Buscando en BASE_OBRAS...</div>';
+
+    const res = await apiGet('searchbase',{q});
+    if (!res.ok) throw new Error(res.error || 'No se encontró en BASE_OBRAS');
+
+    const results = [];
+    if (res.single && res.data) {
+      results.push({data:res.data, id:res.data.id || '', direccion:res.data.direccion || '', localidadPartido:res.data.localidadPartido || '', owner:res.data.owner || res.data.gestor || ''});
+    } else if (Array.isArray(res.results)) {
+      res.results.forEach(r=>results.push(r));
+    }
+
+    if (!results.length) throw new Error('No se encontraron resultados en BASE_OBRAS');
+
+    BASE_RESULTS_CACHE = results;
+
+    if (results.length === 1) {
+      fillDataPreservandoGestion(results[0].data);
+      box.innerHTML = '<div class="resultTitle">Resultado único cargado desde BASE_OBRAS</div>';
+      setMsg('Base cargada.');
+      return;
+    }
+
+    box.innerHTML = '<div class="resultTitle">Resultados en BASE_OBRAS: ' + results.length + '</div>' + results.map((r,i)=>{
+      const d = r.data || {};
+      const id = r.id || d.id || '';
+      const direccion = r.direccion || d.direccion || '';
+      const localidad = r.localidadPartido || d.localidadPartido || [d.localidad,d.partido].filter(Boolean).join(' / ');
+      const owner = r.owner || d.owner || d.gestor || '';
+      const pisos = d.cantPisos ? ' · Pisos: ' + d.cantPisos : '';
+      const uf = d.cantUF ? ' · UF: ' + d.cantUF : '';
+      return `<div class="resultItem">
+        <div><b>${escapeHtml(id)}</b> · ${escapeHtml(direccion)}<br><small>${escapeHtml(localidad)} · ${escapeHtml(owner)}${escapeHtml(pisos)}${escapeHtml(uf)}</small></div>
+        <button type="button" onclick="cargarResultadoBase(${i})">Cargar</button>
+      </div>`;
+    }).join('');
+    setMsg('Elegí un resultado de BASE_OBRAS.');
+  }catch(e){
+    box.style.display='block';
+    box.innerHTML = '<div class="resultTitle bad">' + escapeHtml(e.message) + '</div>';
+    setMsg(e.message,true);
+  }
+}
+function cargarResultadoBase(i){
+  const r = BASE_RESULTS_CACHE[Number(i)];
+  const data = r && (r.data || r);
+  if (!data) {
+    setMsg('No se pudo cargar el resultado seleccionado. Volvé a tocar Buscar en Base y elegí nuevamente.', true);
+    return;
+  }
+  try{
+    fillDataPreservandoGestion(data);
+    const rb=document.getElementById('resultadosBase');
+    if(rb) rb.style.display='none';
+    setMsg('Resultado cargado desde BASE_OBRAS.');
+    showPopup('Ficha cargada desde BASE_OBRAS', 'success', 2600);
+  }catch(err){
+    setMsg('Error cargando resultado: '+(err.message||err), true);
+  }
+}
+
+function parseTxt(){
+  const txt = document.getElementById('txtImport').value || '';
+  const parsed = parseTemplateText(txt);
+  autoDetectPisosUF(parsed, txt);
+  normalizeData(parsed);
+  delete parsed.estadoActual;
+  delete parsed.estadoRelevamiento;
+
+  // Protección de ID: si ya hay una ficha cargada, la plantilla TXT no cambia el ID.
+  // Si el TXT trae ID vacío, 0, 00, etc., se ignora.
+  const currentId = String(document.getElementById('id').value || '').trim();
+  const parsedId = String(parsed.id || '').trim();
+  if(!parsedId || /^0+$/.test(parsedId)) delete parsed.id;
+  else if(currentId && parsedId !== currentId){
+    delete parsed.id;
+    showPopup('El ID del TXT no coincide con el ID cargado. Se conserva el ID existente.', 'warn', 5200);
+  } else if(currentId){
+    delete parsed.id;
+  }
+
+  Object.keys(parsed).forEach(id=>{
+    const el = document.getElementById(id);
+    if (el) el.value = parsed[id];
+  });
+
+  const loc = document.getElementById('localidad').value;
+  const par = document.getElementById('partido').value;
+  if ((loc || par) && document.getElementById('localidadPartido')) {
+    document.getElementById('localidadPartido').value = [loc,par].filter(Boolean).join(' / ');
+  }
+
+  // Desarrollo y observaciones quedan separados para que la ficha sea más clara.
+  const partes = [];
+  if (parsed.desarrolloTexto) partes.push(parsed.desarrolloTexto);
+  if (parsed.amenitiesTexto) partes.push('Amenities: ' + parsed.amenitiesTexto);
+  if (partes.length) document.getElementById('descripcion').value = partes.join('\n');
+  if (parsed.observacionesTexto) document.getElementById('observaciones').value = parsed.observacionesTexto;
+
+  refreshHeaders();
+  renderHist(buildHistorial());
+  renderOpportunityScore();
+  setMsg('TXT cargado y normalizado.');
+}
+
+function parseTemplateText(txt){
+  const out = {};
+  const keyMap = {
+    'id':'id',
+    'direccion':'direccion', 'dirección':'direccion',
+    'localidad':'localidad', 'partido':'partido',
+    'estado de relevamiento':'estadoRelevamiento', 'estado relevamiento':'estadoRelevamiento', 'relevamiento':'estadoRelevamiento',
+    'estado actual':'estadoActual', 'estado':'estadoActual',
+    'desarrolladora':'desarrolladora', 'constructora':'constructora', 'comercializa':'comercializa',
+    'tipo':'tipo', 'tipo de proyecto':'tipo', 'proyecto':'tipo',
+    'ubicacion':'ubicacion', 'ubicación':'ubicacion',
+    'desarrollo':'desarrolloTexto', 'descripcion':'desarrolloTexto', 'descripción':'desarrolloTexto',
+    'nombre desarrollo':'nombreDesarrollo', 'nombre del desarrollo':'nombreDesarrollo', 'nombre de desarrollo':'nombreDesarrollo',
+    'amenities':'amenitiesTexto', 'amenity':'amenitiesTexto',
+    'observaciones':'observacionesTexto', 'observacion':'observacionesTexto', 'observación':'observacionesTexto',
+    'cant pisos':'cantPisos', 'cantidad pisos':'cantPisos', 'cant. pisos':'cantPisos', 'cantidad de pisos':'cantPisos', 'cantidad pisos':'cantPisos', 'pisos':'cantPisos', 'nro pisos':'cantPisos', 'numero de pisos':'cantPisos', 'plantas':'cantPisos',
+    'cant uf':'cantUF', 'cantidad uf':'cantUF', 'cant. uf':'cantUF', 'cantidad uf':'cantUF', 'cantidad de uf':'cantUF', 'uf':'cantUF', 'unidades funcionales':'cantUF', 'cantidad de unidades':'cantUF', 'unidades':'cantUF', 'departamentos':'cantUF', 'dptos':'cantUF', 'deptos':'cantUF',
+    'owner':'owner', 'administrador':'owner', 'gestor':'gestor', 'owner/gestor':'gestor', 'responsable':'gestor'
+  };
+  const lines = txt.split(/\r?\n/);
+  let current = null;
+  lines.forEach(raw=>{
+    const line = raw.replace(/^\s*[\-*•]\s*/, '').replace(/\*/g,'').trim();
+    if(!line) return;
+    const m = line.match(/^([^:]+):\s*(.*)$/);
+    if(m){
+      const key = normalizeKey(m[1]);
+      current = keyMap[key] || null;
+      if(current) out[current] = (out[current] ? out[current] + '\n' : '') + (m[2] || '').trim();
+    } else if(current) {
+      out[current] = (out[current] ? out[current] + '\n' : '') + line;
+    }
+  });
+  return out;
+}
+
+
+function wordNumberToInt(w){
+  const m = {
+    'uno':1,'una':1,'dos':2,'tres':3,'cuatro':4,'cinco':5,'seis':6,'siete':7,'ocho':8,'nueve':9,'diez':10,
+    'once':11,'doce':12,'trece':13,'catorce':14,'quince':15,'dieciseis':16,'dieciséis':16,'diecisiete':17,
+    'dieciocho':18,'diecinueve':19,'veinte':20,'veintiuno':21,'veintidos':22,'veintidós':22,'veintitres':23,'veintitrés':23,
+    'treinta':30,'cuarenta':40,'cincuenta':50,'sesenta':60,'setenta':70,'ochenta':80,'noventa':90,'cien':100
+  };
+  w = String(w||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  return m[w] || '';
+}
+
+function autoDetectPisosUF(data, rawTxt){
+  // Si el gestor no escribió campos Cant. Pisos / Cant. UF, los busca dentro de Desarrollo, Observaciones o el TXT completo.
+  const src = [data.desarrolloTexto, data.observacionesTexto, data.amenitiesTexto, rawTxt].filter(Boolean).join(' | ');
+  if(!data.cantPisos){
+    let m = src.match(/(?:edificio\s+de\s+)?(\d{1,3})\s*(?:pisos?|plantas?|niveles?)/i);
+    if(!m) m = src.match(/(?:edificio\s+de\s+)?([a-záéíóúñ]+)\s*(?:pisos?|plantas?|niveles?)/i);
+    if(m) data.cantPisos = /^\d/.test(m[1]) ? m[1] : wordNumberToInt(m[1]);
+  }
+  if(!data.cantUF){
+    let m = src.match(/(\d{1,4})\s*(?:uf|u\.?f\.?|unidades\s+funcionales|unidades|departamentos|deptos|dptos)/i);
+    if(!m) m = src.match(/(?:uf|u\.?f\.?|unidades\s+funcionales|unidades|departamentos|deptos|dptos)\s*(?:totales|aprox\.?|estimadas)?\s*[:\-]?\s*(\d{1,4})/i);
+    if(m) data.cantUF = m[1];
+  }
+  return data;
+}
+
+function normalizeKey(s){
+  return String(s||'')
+    .trim().toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/\./g,'')
+    .replace(/\s+/g,' ');
+}
+
+function titleCaseEs(txt){
+  txt = String(txt||'').trim().toLowerCase().replace(/\s+/g,' ');
+  if(!txt) return '';
+  const lower = new Set(['de','del','la','las','el','los','y','e','en','a','al','por','para','con','sin']);
+  return txt.split(' ').map((w,i)=>{
+    if(!w) return w;
+    if(i>0 && lower.has(w)) return w;
+    return w.charAt(0).toUpperCase() + w.slice(1);
+  }).join(' ');
+}
+
+function normalizeStreet(txt){
+  let t = String(txt||'').trim().replace(/\s+/g,' ');
+  if(!t) return '';
+  t = t.replace(/^(av|av\.|avenida)\s+/i,'Av. ');
+  t = t.replace(/^(bv|bv\.|bvd|bvd\.|boulevard|bulevar|bolulevar)\s+/i,'Bv. ');
+  t = t.replace(/^(calle)\s+/i,'');
+  if(/^Av\.\s+/i.test(t)) return 'Av. ' + titleCaseEs(t.replace(/^Av\.\s*/i,''));
+  if(/^Bv\.\s+/i.test(t)) return 'Bv. ' + titleCaseEs(t.replace(/^Bv\.\s*/i,''));
+  return titleCaseEs(t);
+}
+
+function normalizeStatus(txt){
+  let t = titleCaseEs(txt);
+  t = t.replace(/\bEn\b/g,'en').replace(/\bDe\b/g,'de').replace(/\bDel\b/g,'del').replace(/\bLa\b/g,'la').replace(/\bA\b/g,'a');
+  return t.charAt(0).toUpperCase() + t.slice(1);
+}
+
+function normalizeData(data){
+  if(!data) return data;
+  ['direccion'].forEach(k=>{ if(data[k] !== undefined) data[k] = normalizeStreet(data[k]); });
+  ['estadoActual','estadoRelevamiento'].forEach(k=>{ if(data[k] !== undefined) data[k] = normalizeStatus(data[k]); });
+  ['localidadPartido','localidad','partido','ubicacion','owner','gestor','desarrolladora','constructora','comercializa','tipo','tipoProyecto','nombreDesarrollo'].forEach(k=>{
+    if(data[k] !== undefined) data[k] = titleCaseEs(data[k]);
+  });
+  ['descripcion','observaciones','desarrolloTexto','amenitiesTexto','observacionesTexto','id','cantPisos','cantUF'].forEach(k=>{ if(data[k] !== undefined) data[k] = String(data[k]||'').trim(); });
+  return data;
+}
+
+function previewFoto(n){
+  const file = document.getElementById('fotoFile'+n).files[0];
+  if (!file) return;
+  const rd = new FileReader();
+  rd.onload = e => setPhoto(n, e.target.result);
+  rd.readAsDataURL(file);
+  if(!document.getElementById('fotoFecha'+n).value) document.getElementById('fotoFecha'+n).value = fechaDia();
+  updateFotoCaption(n);
+}
+function setPhoto(n, src){
+  const img = document.getElementById('img'+n);
+  const box = document.getElementById('box'+n);
+  img.src = src; img.style.display='block';
+  const sp = box.querySelector('span'); if (sp) sp.style.display='none';
+}
+function drivePreviewUrl(link){
+  const s=String(link||'').trim();
+  if(!s) return '';
+  const m=s.match(/\/d\/([a-zA-Z0-9_-]+)/) || s.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+  if(m && m[1]) return 'https://drive.google.com/thumbnail?id='+m[1]+'&sz=w1200';
+  return s;
+}
+function showPhotoFromLink(n, link){
+  if (!link) return;
+  const src = drivePreviewUrl(link);
+  const img = document.getElementById('img'+n);
+  if(img){
+    img.onerror = function(){
+      const sp=document.querySelector('#box'+n+' span');
+      if(sp){ sp.style.display='block'; sp.textContent='FOTO '+n+' GUARDADA EN DRIVE'; }
+      img.style.display='none';
+    };
+  }
+  setPhoto(n, src);
+}
+function updateFotoCaption(n){
+  document.getElementById('fotoFecha'+n+'View').textContent = document.getElementById('fotoFecha'+n).value || '';
+}
+['fotoFecha1','fotoFecha2'].forEach(id=>document.addEventListener('input', e=>{ if(e.target && e.target.id===id) updateFotoCaption(id.endsWith('1')?1:2);}));
+
+async function subirFotosPendientes(mostrarMensaje=true){
+  const pendientes=[];
+  for(const n of [1,2]){
+    const fileEl=document.getElementById('fotoFile'+n);
+    const linkEl=document.getElementById('fotoLink'+n);
+    if(fileEl && fileEl.files && fileEl.files[0] && !(linkEl && linkEl.value)){
+      pendientes.push(n);
+    }
+  }
+  if(!pendientes.length) return;
+  if(mostrarMensaje) setMsg('Subiendo fotos pendientes a Drive...');
+  for(const n of pendientes){
+    await subirFoto(n);
+  }
+}
+
+async function subirFoto(n){
+  try{
+    const file = document.getElementById('fotoFile'+n).files[0];
+    if (!file) throw new Error('Seleccioná una foto primero');
+
+    const data = getData();
+    if(!(data.id || data.direccion)) throw new Error('Antes de subir la foto cargá ID o Dirección');
+
+    // V13.4: enviamos dataUrl completo + copia base64.
+    // Esto evita incompatibilidades entre versiones anteriores del Code.gs.
+    const dataUrl = await imageFileToCompressedDataUrl(file, 1400, 0.78);
+    const base64 = String(dataUrl).split(',')[1] || '';
+    const mimeType = (String(dataUrl).match(/^data:([^;]+);/)||[])[1] || file.type || 'image/jpeg';
+    const fecha = document.getElementById('fotoFecha'+n).value || fechaDia();
+    const observacion = document.getElementById('fotoObservacion'+n).value || '';
+
+    setMsg('Subiendo foto ' + n + ' a Drive y guardando link...');
+    const res = await apiPost({
+      action:'uploadPhoto',
+      slot:n,
+      data:data,
+      photo:{dataUrl:dataUrl,base64:base64,mimeType:mimeType,name:file.name,fecha:fecha,observacion:observacion}
+    });
+
+    if (!res || !res.ok) throw new Error((res && res.error) || 'No se pudo subir la foto');
+    const link = res.link || res.url || (res.data && res.data['fotoLink'+n]) || '';
+    if(!link) throw new Error('Apps Script no devolvió link. Revisá permisos de Drive/Deploy.');
+
+    document.getElementById('fotoLink'+n).value = link;
+    document.getElementById('fotoFecha'+n).value = fecha;
+    document.getElementById('fotoObservacion'+n).value = observacion;
+    document.getElementById('fotoCarpetaUrl').value = res.folderUrl || (res.data && res.data.fotoCarpetaUrl) || '';
+
+    setPhoto(n, dataUrl);
+    updateFotoCaption(n);
+    showPopup('Foto '+n+' OK: link generado y guardado.', 'success', 5200);
+    setMsg('Foto '+n+' subida. Link guardado en fotoLink'+n+'. Versión '+(res.version || ''));
+  }catch(e){
+    console.error(e);
+    setMsg('Error foto '+n+': '+e.message,true);
+    showPopup('Error foto '+n+': '+e.message, 'error', 7000);
+  }
+}
+function readFile(file){ return new Promise((resolve,reject)=>{ const r=new FileReader(); r.onload=()=>resolve(r.result); r.onerror=reject; r.readAsDataURL(file); }); }
+function imageFileToCompressedDataUrl(file, maxSize=1600, quality=0.82){
+  return new Promise((resolve,reject)=>{
+    if(!file || !/^image\//i.test(file.type||'')) return readFile(file).then(resolve).catch(reject);
+    const reader = new FileReader();
+    reader.onerror = reject;
+    reader.onload = () => {
+      const img = new Image();
+      img.onerror = reject;
+      img.onload = () => {
+        let w = img.naturalWidth || img.width, h = img.naturalHeight || img.height;
+        const scale = Math.min(1, maxSize / Math.max(w,h));
+        w = Math.round(w * scale); h = Math.round(h * scale);
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img,0,0,w,h);
+        resolve(canvas.toDataURL('image/jpeg', quality));
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function setTodayPhotoDates(){
+  const f = fechaDia();
+  if(!document.getElementById('fotoFecha1').value) document.getElementById('fotoFecha1').value = f;
+  if(!document.getElementById('fotoFecha2').value) document.getElementById('fotoFecha2').value = f;
+  updateFotoCaption(1); updateFotoCaption(2);
+}
+
+function todayIsoLocal(){
+  const d=new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+function parseIsoDate(v){
+  if(!v) return null;
+  const s=String(v).trim();
+  const m=s.match(/(\d{4})-(\d{2})-(\d{2})/); if(m) return new Date(Number(m[1]),Number(m[2])-1,Number(m[3]));
+  const m2=s.match(/(\d{2})\/(\d{2})\/(\d{4})/); if(m2) return new Date(Number(m2[3]),Number(m2[2])-1,Number(m2[1]));
+  return null;
+}
+function addDays(d,n){ const x=new Date(d); x.setDate(x.getDate()+Number(n||0)); return x; }
+function diffDays(a,b){ return Math.floor((b.getTime()-a.getTime())/(1000*60*60*24)); }
+function fmtDate(d){ return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`; }
+function stateIncludesAll(words){
+  const s=normalizeKey(getVal('estadoActual') || getVal('estadoRelevamiento') || '');
+  return words.every(w=>s.includes(normalizeKey(w)));
+}
+function autoSetMilestones(){
+  if(!getVal('plazoComercialDias')) setVal('plazoComercialDias','90');
+  if(!getVal('plazoNegociacionDias')) setVal('plazoNegociacionDias','15');
+  if(!getVal('plazoObradorDias')) setVal('plazoObradorDias','7');
+  if(!getVal('plazoCableadoDias')) setVal('plazoCableadoDias','10');
+
+  const hayFicha = !!(getVal('id') || getVal('direccion') || getVal('estadoActual') || getVal('estadoRelevamiento'));
+  if(hayFicha && !getVal('fechaInicioCicloComercial')) setVal('fechaInicioCicloComercial', todayIsoLocal());
+
+  const estado = normalizeKey(getVal('estadoActual') || getVal('estadoRelevamiento') || '');
+  const esNegociacionPermiso = estado.includes('permiso') && (estado.includes('negociacion') || estado.includes('negociación'));
+  const esPermisoFirmado = estado.includes('permiso') && estado.includes('firmado');
+
+  if(!getVal('fechaPermisoNegociacion') && esNegociacionPermiso) setVal('fechaPermisoNegociacion', todayIsoLocal());
+  if(!getVal('fechaPermisoNegociacionCerrado') && esPermisoFirmado) setVal('fechaPermisoNegociacionCerrado', todayIsoLocal());
+
+  const esPermisoObrador = stateIncludesAll(['permiso','obrador','firmado']) || stateIncludesAll(['permiso','general','firmado']);
+  if(!getVal('fechaPermisoObradorFirmado') && esPermisoObrador) setVal('fechaPermisoObradorFirmado', todayIsoLocal());
+  if(!getVal('fechaObradorInstalado') && (stateIncludesAll(['obrador','instalado']) || stateIncludesAll(['instalacion','obrador']))) setVal('fechaObradorInstalado', todayIsoLocal());
+  if(!getVal('fechaPermisoCableadoFirmado') && stateIncludesAll(['permiso','cableado','firmado'])) setVal('fechaPermisoCableadoFirmado', todayIsoLocal());
+  if(!getVal('fechaCableado') && estado.includes('cableado') && !estado.includes('permiso')) setVal('fechaCableado', todayIsoLocal());
+}
+function semaforoColor(pct, done){
+  if(done) return ['#087a33','Finalizado'];
+  if(pct<=33) return ['#087a33','En plazo'];
+  if(pct<=66) return ['#c5a400','Seguimiento'];
+  if(pct<=100) return ['#d97706','Definición'];
+  return ['#b42318','Vencido'];
+}
+function renderCountdown(titulo, inicioId, plazoId, finId, esperaTexto){
+  const inicio=parseIsoDate(getVal(inicioId));
+  const fin=getVal(finId);
+  const plazo=Number(getVal(plazoId) || (titulo==='Comercial'?90:titulo==='Negociación'?15:titulo==='Obrador'?7:10));
+  if(!inicio) return `<div class="semaforoCard"><b>${titulo}</b>${esperaTexto||'Sin fecha de inicio'}</div>`;
+  const hoy=new Date(); const dia=Math.max(1,diffDays(inicio,hoy)+1); const pct=Math.round((dia/plazo)*100); const rest=plazo-dia;
+  const done=!!fin; const c=semaforoColor(pct, done); const vence=addDays(inicio,plazo);
+  let cls = done ? 'done' : (pct<=33 ? 'ok' : pct<=66 ? 'warn' : pct<=100 ? 'def' : 'bad');
+  return `<div class="semaforoCard ${cls}"><b>${titulo}</b>${done?'✅ Finalizado':(rest>=0?`Día ${dia}/${plazo} · Restan ${rest}`:`Vencido hace ${Math.abs(rest)} días`)}<br><small>Inicio: ${fmtDate(inicio)} · Vence: ${fmtDate(vence)}</small><div class="bar"><span style="width:${Math.min(100,Math.max(0,pct))}%;background:${c[0]}"></span></div><small>${c[1]}</small></div>`;
+}
+function renderSemaforo(){
+  const box=document.getElementById('semaforoWrap'); if(!box) return;
+  autoSetMilestones();
+  box.innerHTML = renderCountdown('Comercial','fechaInicioCicloComercial','plazoComercialDias','fechaPermisoNegociacion','90 días hasta iniciar permiso')
+    + renderCountdown('Negociación','fechaPermisoNegociacion','plazoNegociacionDias','fechaPermisoNegociacionCerrado','15 días cuando un permiso está en negociación')
+    + renderCountdown('Obrador','fechaPermisoObradorFirmado','plazoObradorDias','fechaObradorInstalado','7 días desde Permiso Obrador Firmado')
+    + renderCountdown('Cableado','fechaPermisoCableadoFirmado','plazoCableadoDias','fechaCableado','10 días desde Permiso Cableado Firmado');
+}
+function confidenceFor(v){
+  v=String(v||'').trim().toLowerCase();
+  if(!v || v==='sin datos' || v==='a confirmar') return ['🔴','Sin información pública','bad'];
+  if(v.includes('confirmar') || v.includes('sin datos')) return ['🟡','Requiere verificación en obra','warn'];
+  return ['🟢','Dato disponible','ok'];
+}
+function investigarObra(){
+  const data=getData();
+  const q=(data.direccion || document.getElementById('buscar').value || '').trim();
+  const panel=document.getElementById('investigacionPanel');
+  panel.style.display='block';
+  const rows=[['ID',data.id],['Dirección',data.direccion||q],['Localidad',data.localidadPartido||data.localidad],['Constructora',data.constructora],['Desarrolladora',data.desarrolladora],['Comercializa',data.comercializa],['Nombre Desarrollo',data.nombreDesarrollo],['Pisos',data.cantPisos],['UF',data.cantUF],['Amenities',extractAmenitiesFromDesc(data.descripcion)]];
+  const links = q ? `<div style="margin-top:8px"><b>Búsquedas sugeridas:</b> <a target="_blank" href="https://www.google.com/search?q=${encodeURIComponent(q+' emprendimiento inmobiliario')}">Google proyecto</a> · <a target="_blank" href="https://www.google.com/search?q=${encodeURIComponent(q+' desarrolladora constructora')}">Desarrolladora/constructora</a> · <a target="_blank" href="https://www.google.com/search?q=${encodeURIComponent(q+' amenities unidades funcionales')}">UF/Amenities</a></div>` : '';
+  panel.innerHTML='<b>🔎 Investigación asistida de obra</b><br><small>Compara lo cargado desde BASE_OBRAS/ficha y marca confianza. La búsqueda web automática real requiere una API externa; estos links abren fuentes públicas para validar y completar. Estado Relevamiento, Estado Actual y Observaciones Comerciales quedan protegidos.</small>'+
+    rows.map(r=>{ const c=confidenceFor(r[1]); return `<div class="invRow"><b>${escapeHtml(r[0])}</b><span>${escapeHtml(r[1]||'A confirmar')}</span><span class="conf ${c[2]}">${c[0]} ${c[1]}</span></div>`;}).join('')+links+
+    `<div style="margin-top:8px"><label>Información pública investigada para comparar y completar campos vacíos</label><textarea id="invPaste" class="txtbox" style="min-height:80px" placeholder="Pegá acá datos encontrados: Desarrolladora, Constructora, Pisos, UF, Amenities..."></textarea><div class="actions"><button class="secondary" onclick="aplicarInvestigacionPegada()">Comparar y completar vacíos</button></div><small>No modifica Estado Relevamiento, Estado Actual ni Observaciones Comerciales.</small></div>`;
+}
+
+function aplicarInvestigacionPegada(){
+  const txt = document.getElementById('invPaste') ? document.getElementById('invPaste').value : '';
+  if(!txt.trim()){ setMsg('Pegá información investigada para comparar.', true); return; }
+  const parsed = parseTemplateText(txt);
+  autoDetectPisosUF(parsed, txt);
+  normalizeData(parsed);
+  const map = {desarrolloTexto:'descripcion', amenitiesTexto:'descripcion', observacionesTexto:null};
+  const protegidos = new Set(['estadoRelevamiento','estadoActual','observaciones','observacionesTexto']);
+  Object.keys(parsed).forEach(k=>{
+    if(protegidos.has(k)) return;
+    let id = map[k] || k;
+    if(!id) return;
+    const el = document.getElementById(id);
+    if(!el) return;
+    if(id==='descripcion' && k==='amenitiesTexto'){
+      if(!el.value.includes('Amenities:')) el.value = [el.value, 'Amenities: '+parsed[k]].filter(Boolean).join('\n');
+    } else if(!el.value) {
+      el.value = parsed[k];
+    }
+  });
+  refreshHeaders(); renderOpportunityScore();
+  setMsg('Información investigada aplicada solo en campos vacíos. Gestión comercial protegida.');
+}
+function extractAmenitiesFromDesc(txt){
+  const m=String(txt||'').match(/Amenities:\s*(.*)/i);
+  return m ? m[1] : '';
+}
+
+
+function renderOpportunityScore(){
+  const box = document.getElementById('opScore'); if(!box) return;
+  const data = getDataForScore();
+  const score = calcularOportunidad(data);
+  const label = score >= 80 ? '🟢 Prioridad Alta' : score >= 55 ? '🟡 Prioridad Media' : '🔴 Prioridad Baja';
+  box.textContent = `Oportunidad comercial: ${score}/100 · ${label}`;
+}
+function getDataForScore(){
+  const data={};
+  ['cantUF','cantPisos','estadoActual','tipo','descripcion','observaciones'].forEach(id=>{ const el=document.getElementById(id); data[id]=el?el.value:''; });
+  return data;
+}
+function calcularOportunidad(data){
+  let s = 20;
+  const uf = Number(String(data.cantUF||'').replace(/[^0-9]/g,''));
+  const pisos = Number(String(data.cantPisos||'').replace(/[^0-9]/g,''));
+  const estado = normalizeKey(data.estadoActual||'');
+  const tipo = normalizeKey(data.tipo||'');
+  const texto = normalizeKey((data.descripcion||'')+' '+(data.observaciones||''));
+  if(uf>=60) s+=30; else if(uf>=30) s+=24; else if(uf>=15) s+=16; else if(uf>=8) s+=10; else if(uf>0) s+=5;
+  if(pisos>=10) s+=15; else if(pisos>=6) s+=10; else if(pisos>=3) s+=5;
+  if(tipo.includes('premium')) s+=8;
+  if(tipo.includes('residencial')) s+=6;
+  if(texto.includes('pileta')||texto.includes('piscina')||texto.includes('sum')||texto.includes('gimnasio')||texto.includes('amenities')) s+=8;
+  if(estado.includes('permiso') && estado.includes('firmado')) s+=18;
+  else if(estado.includes('negociacion')||estado.includes('negociación')) s+=10;
+  else if(estado.includes('obra avanzada')||estado.includes('construccion')||estado.includes('construcción')) s+=8;
+  if(estado.includes('cableado')) s+=20;
+  return Math.max(0, Math.min(100, Math.round(s)));
+}
+
+function fechaDia(){
+  const dias=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+  const d=new Date();
+  return `${dias[d.getDay()]} ${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
+}
+function clearPhoto(n){
+  const img=document.getElementById('img'+n);
+  if(img){ img.removeAttribute('src'); img.style.display='none'; }
+  const sp=document.querySelector('#box'+n+' span'); if(sp) sp.style.display='block';
+  const file=document.getElementById('fotoFile'+n); if(file) file.value='';
+  ['fotoLink','fotoFecha','fotoObservacion'].forEach(prefix=>{ const el=document.getElementById(prefix+n); if(el) el.value=''; });
+  const cap=document.getElementById('fotoFecha'+n+'View'); if(cap) cap.textContent='';
+}
+function resetAllState(clearUrl){
+  const admin=document.getElementById('adminPanel'); if(admin) admin.style.display='none';
+  if (typeof BASE_RESULTS_CACHE !== 'undefined') BASE_RESULTS_CACHE = [];
+  const keepUrl = clearUrl ? '' : (document.getElementById('webappUrl') ? document.getElementById('webappUrl').value : '');
+  document.querySelectorAll('input, textarea').forEach(el=>{
+    if(!clearUrl && el.id==='webappUrl') return;
+    el.value='';
+  });
+  if(!clearUrl && document.getElementById('webappUrl')) document.getElementById('webappUrl').value=keepUrl;
+  document.querySelectorAll('select').forEach(el=>el.selectedIndex=0);
+  const rb=document.getElementById('resultadosBase'); if(rb){ rb.innerHTML=''; rb.style.display='none'; }
+  const inv=document.getElementById('investigacionPanel'); if(inv){ inv.innerHTML=''; inv.style.display='none'; }
+  const msg=document.getElementById('msg'); if(msg){ msg.textContent=''; msg.className='msg'; }
+  const hist=document.getElementById('histText'); if(hist) hist.textContent='';
+  const sem=document.getElementById('semaforoWrap'); if(sem) sem.innerHTML='';
+  const score=document.getElementById('opScore'); if(score) score.textContent='';
+  setVal('plazoComercialDias','90'); setVal('plazoNegociacionDias','15'); setVal('plazoObradorDias','7'); setVal('plazoCableadoDias','10');
+  clearPhoto(1); clearPhoto(2);
+  refreshHeaders();
+  renderSemaforo(); renderOpportunityScore();
+}
+async function limpiar(){
+  const ok = await confirmarAccion('Limpiar ficha','¿Desea iniciar una nueva ficha? Se borrará todo lo cargado en pantalla.');
+  if(!ok) return;
+  resetAllState(false);
+  setMsg('Ficha limpia. Nueva carga iniciada.');
+}
+function imprimirPDF(){ refreshHeaders(); window.print(); }
+</script>
+
+
+</body></html>
